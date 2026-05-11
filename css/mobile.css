@@ -118,3 +118,40 @@
         }
     }
 
+    /* ===== ESPAÇO ENTRE TECLADO E INPUT ===== */
+@media (max-width: 768px) {
+    .input-container {
+        padding-bottom: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .input-wrapper {
+        margin-bottom: 5px;
+    }
+    
+    /* Quando o teclado está aberto */
+    body.keyboard-open .input-container {
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+    }
+    
+    body.keyboard-open .chat-main {
+        padding-bottom: 30px;
+    }
+    
+    .messages-container {
+        padding-bottom: 15px;
+    }
+    
+    #userInput {
+        margin-bottom: 5px;
+    }
+}
+
+/* Extra para dispositivos com notch */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .input-container {
+        padding-bottom: calc(25px + env(safe-area-inset-bottom));
+    }
+}
+
