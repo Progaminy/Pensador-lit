@@ -81,3 +81,33 @@
         font-size: 1.2rem;
     }
 }
+
+/* ===== GARANTIR TOPO VISÍVEL ===== */
+.chat-main {
+    position: relative;
+}
+
+.messages-container {
+    scroll-behavior: smooth;
+}
+
+/* Mostrar indicador de scroll para cima */
+.scroll-top-indicator {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 0.85rem;
+    animation: fadeIn 0.3s ease;
+    display: none;
+}
+
+.scroll-top-indicator.visible {
+    display: block;
+}
