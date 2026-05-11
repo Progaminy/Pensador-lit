@@ -7,7 +7,8 @@ const KnowledgeBase = {
         { id: 'html', name: '🔧 HTML', cssClass: 'html-nav' },
         { id: 'css', name: '📚 CSS', cssClass: 'css-nav' },
         { id: 'javascript', name: '🤔 JavaScript', cssClass: 'js-nav' },
-        { id: 'outros', name: '💬 Outros', cssClass: 'outros-nav' }
+        { id: 'outros', name: '💬 Outros', cssClass: 'outros-nav' },
+        { id: 'brev', name: 'Brevimente', cssClass: 'brev-nav'}
     ],
 
     // Conteúdo das bibliotecas
@@ -225,8 +226,23 @@ const soma = numeros.reduce((a, b) => a + b, 0);</code></pre></div>
                     content: '<h3>⚡ Otimização</h3><p>Minificar CSS/JS, usar lazy loading e cache eficiente.</p>'
                 }
             }
+        },
+        brev: {
+            title: 'Brevimente',
+            description: 'Tópicos breves adicionais',
+            items: {
+                'breve acessar': {
+                    title: 'aula 1 breve',
+                    content: '<h3>todo mundo quer aprender brevimwnte.</p>'
+                },
+                'andar breve': {
+                    title: 'aula2',
+                    content: '<h3>⚡ anadr</h3><p>ir ao esudio.</p>'
+                }
+            }
         }
     },
+
 
     // 🔧 Função para ADICIONAR nova categoria
     addCategory(id, name, cssClass) {
@@ -250,7 +266,7 @@ function renderNavigation() {
     
     document.getElementById('navButtons').innerHTML = navHTML;
 
-    const quickHTML = KnowledgeBase.categories.slice(0, 3).map(cat =>
+    const quickHTML = KnowledgeBase.categories.slice(0, 4).map(cat =>
         `<button class="quick-btn" onclick="Chat.showTopicOptions('${cat.id}')">${cat.name}</button>`
     ).join('');
     
