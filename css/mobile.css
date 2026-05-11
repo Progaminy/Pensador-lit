@@ -93,8 +93,9 @@
         width: 100%;
         text-align: center;
     }
+}
 
-    /* ===== CORREÇÕES TECLADO MOBILE ===== */
+ /* ===== CORREÇÕES TECLADO MOBILE ===== */
     body.keyboard-open .input-container {
         position: sticky;
         bottom: 0;
@@ -117,4 +118,3 @@
         }
     }
 
-}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,20 @@
     <link rel="stylesheet" href="css/dark.css" id="dark-theme" disabled>
     <link rel="stylesheet" href="css/mobile.css">
 </head>
+
 <body>
     <div class="app-container">
         <!-- SIDEBAR -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <div class="profile-avatar" id="profileAvatar" onclick="document.getElementById('imageUpload').click()">
+            <div class="sidebar-header"><span>🧠</span>
+                <div class="profile-avatar" id="profileAvatar" onclick="document.getElementById('imageUpload').click()"
+                    title="Clique para trocar foto | Clique longo para remover">
                     <span>🧠</span>
                 </div>
                 <input type="file" id="imageUpload" accept="image/*" hidden onchange="UI.updateProfile(event)">
+                <span>🧠</span>
                 <div class="brand">
+                    <span>🧠</span>
                     <h2>Pensador Sem Fronteira</h2>
                     <span class="version">📚 LITE</span>
                 </div>
@@ -80,7 +85,8 @@
 
             <div class="input-container">
                 <div class="input-wrapper">
-                    <textarea id="userInput" placeholder="Digite sua pergunta ou escolha um tópico..." rows="1"></textarea>
+                    <textarea id="userInput" placeholder="Digite sua pergunta ou escolha um tópico..."
+                        rows="1"></textarea>
                     <button class="send-button" onclick="Chat.send()">🚀</button>
                 </div>
                 <div class="input-footer">
@@ -96,4 +102,5 @@
     <script src="js/chat.js"></script>
     <script src="js/ui.js"></script>
 </body>
+
 </html>
