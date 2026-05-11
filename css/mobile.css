@@ -1,157 +1,83 @@
-/* ===== RESPONSIVO MOBILE ===== */
+/* ===== CORREÇÃO: TOPO VISÍVEL NO MOBILE ===== */
 @media (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        left: -300px;
-        top: 0;
-        bottom: 0;
-        z-index: 20;
-        transition: left 0.3s ease;
-    }
-
-    .sidebar.open {
-        left: 0;
-    }
-
-    .sidebar-overlay {
-        display: none;
-    }
-
-    .sidebar-overlay.active {
-        display: block;
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .chat-main {
-        width: 100%;
-    }
-
-    .message-content {
-        max-width: 85% !important;
-    }
-
-    .welcome-message h2 {
-        font-size: 1.4rem;
-    }
-
-    .quick-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .quick-btn {
-        width: 80%;
-    }
-
-    .input-container {
-        padding: 10px 15px;
-    }
-
-    .code-actions {
-        flex-direction: column;
-    }
-
-    .code-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
+    /* Garantir que o header do chat fica sempre visível */
     .chat-header {
-        padding: 10px 15px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--bg-secondary);
+        border-bottom: 2px solid var(--border-color);
     }
 
-    .chat-status span:last-child {
-        font-size: 0.8rem;
+    /* Ajustar altura das mensagens */
+    .messages-container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Garantir que a primeira mensagem não fica escondida */
+    .welcome-message {
+        padding-top: 20px;
+    }
+
+    /* Input fixo no fundo */
+    .input-container {
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        background: var(--bg-secondary);
+        border-top: 2px solid var(--border-color);
+        padding-bottom: 15px;
+    }
+
+    /* Quando teclado abre */
+    body.keyboard-open .chat-header {
+        position: relative;
+    }
+
+    body.keyboard-open .input-container {
+        padding-bottom: 25px;
+    }
+
+    /* Scroll suave */
+    .messages-container {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    /* Ajustar altura total */
+    .chat-main {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .messages-container {
-        padding: 15px 10px;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    /* Garantir que o topo do chat é visível ao abrir */
+    .chat-main {
+        padding-top: 0;
+    }
+}
+
+/* Ajuste extra para ecrãs pequenos */
+@media (max-width: 480px) {
+    .chat-header {
+        padding: 10px 12px;
+    }
+
+    .messages-container {
+        padding: 10px 8px;
     }
 
     .welcome-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    .welcome-message {
-        padding: 20px 10px;
-    }
-
-    .topic-options {
-        flex-direction: column;
-    }
-
-    .topic-option-btn {
-        width: 100%;
-        text-align: center;
+    .welcome-message h2 {
+        font-size: 1.2rem;
     }
 }
-
- /* ===== CORREÇÕES TECLADO MOBILE ===== */
-    body.keyboard-open .input-container {
-        position: sticky;
-        bottom: 0;
-        z-index: 100;
-        background: var(--bg-secondary);
-    }
-
-    body.keyboard-open .messages-container {
-        padding-bottom: 20px;
-    }
-
-    /* Ajuste iOS */
-    @supports (-webkit-touch-callout: none) {
-        .input-container {
-            padding-bottom: 20px;
-        }
-
-        body.keyboard-open .chat-main {
-            height: calc(100vh - 40px);
-        }
-    }
-
-    /* ===== ESPAÇO ENTRE TECLADO E INPUT ===== */
-@media (max-width: 768px) {
-    .input-container {
-        padding-bottom: 25px;
-        margin-bottom: 10px;
-    }
-    
-    .input-wrapper {
-        margin-bottom: 5px;
-    }
-    
-    /* Quando o teclado está aberto */
-    body.keyboard-open .input-container {
-        padding-bottom: 40px;
-        margin-bottom: 20px;
-    }
-    
-    body.keyboard-open .chat-main {
-        padding-bottom: 30px;
-    }
-    
-    .messages-container {
-        padding-bottom: 15px;
-    }
-    
-    #userInput {
-        margin-bottom: 5px;
-    }
-}
-
-/* Extra para dispositivos com notch */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-    .input-container {
-        padding-bottom: calc(25px + env(safe-area-inset-bottom));
-    }
-}
-
