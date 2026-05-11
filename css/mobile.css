@@ -1,113 +1,85 @@
-/* ===== CORREÇÃO: TOPO VISÍVEL NO MOBILE ===== */
+/* ===== RESPONSIVO MOBILE ===== */
 @media (max-width: 768px) {
-    /* Garantir que o header do chat fica sempre visível */
+    .sidebar {
+        position: fixed;
+        left: -300px;
+        top: 0;
+        bottom: 0;
+        z-index: 20;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open { left: 0; }
+
+    .sidebar-overlay.active {
+        display: block;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 15;
+    }
+
+    .mobile-menu-toggle,
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .chat-main {
+        width: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+    }
+
     .chat-header {
         position: sticky;
         top: 0;
         z-index: 10;
-        background: var(--bg-secondary);
-        border-bottom: 2px solid var(--border-color);
-    }
-
-    /* Ajustar altura das mensagens */
-    .messages-container {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    /* Garantir que a primeira mensagem não fica escondida */
-    .welcome-message {
-        padding-top: 20px;
-    }
-
-    /* Input fixo no fundo */
-    .input-container {
-        position: sticky;
-        bottom: 0;
-        z-index: 10;
-        background: var(--bg-secondary);
-        border-top: 2px solid var(--border-color);
-        padding-bottom: 15px;
-    }
-
-    /* Quando teclado abre */
-    body.keyboard-open .chat-header {
-        position: relative;
-    }
-
-    body.keyboard-open .input-container {
-        padding-bottom: 25px;
-    }
-
-    /* Scroll suave */
-    .messages-container {
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-    }
-
-    /* Ajustar altura total */
-    .chat-main {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
+        flex-shrink: 0;
     }
 
     .messages-container {
         flex: 1;
         overflow-y: auto;
+        padding: 15px 12px;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* Garantir que o topo do chat é visível ao abrir */
-    .chat-main {
-        padding-top: 0;
+    .input-container {
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        flex-shrink: 0;
+        padding-bottom: 25px;
     }
+
+    body.keyboard-open .input-container {
+        padding-bottom: 40px;
+    }
+
+    .message-content { max-width: 85% !important; }
+    
+    .welcome-icon { font-size: 3.5rem; }
+    .welcome-message h2 { font-size: 1.5rem; }
+
+    .quick-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-btn { width: 80%; }
+
+    .code-actions { flex-direction: column; }
+    .code-btn { width: 100%; justify-content: center; }
+
+    .topic-options { flex-direction: column; }
+    .topic-option-btn { width: 100%; text-align: center; }
 }
 
-/* Ajuste extra para ecrãs pequenos */
 @media (max-width: 480px) {
-    .chat-header {
-        padding: 10px 12px;
-    }
-
-    .messages-container {
-        padding: 10px 8px;
-    }
-
-    .welcome-icon {
-        font-size: 2.5rem;
-    }
-
-    .welcome-message h2 {
-        font-size: 1.2rem;
-    }
-}
-
-/* ===== GARANTIR TOPO VISÍVEL ===== */
-.chat-main {
-    position: relative;
-}
-
-.messages-container {
-    scroll-behavior: smooth;
-}
-
-/* Mostrar indicador de scroll para cima */
-.scroll-top-indicator {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--green);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 5;
-    font-size: 0.85rem;
-    animation: fadeIn 0.3s ease;
-    display: none;
-}
-
-.scroll-top-indicator.visible {
-    display: block;
+    .chat-header { padding: 10px 12px; }
+    .messages-container { padding: 12px 10px; }
+    .input-container { padding: 10px 12px 20px; }
+    .welcome-icon { font-size: 2.8rem; }
+    .welcome-message h2 { font-size: 1.3rem; }
 }
