@@ -1,0 +1,25 @@
+/* ===== TEMA ESCURO ===== */
+[data-theme="dark"] {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-sidebar: #0f0f1a;
+    --bg-hover: #1e1e3a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #9ca3af;
+    --border-color: #2d2d5e;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .message.assistant .message-content {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .welcome-message h2 {
+    background: linear-gradient(135deg, #39ff14, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
