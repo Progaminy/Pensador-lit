@@ -16,24 +16,24 @@ const UI = {
     toggleTheme() {
         this.isDark = !this.isDark;
         const theme = this.isDark ? 'dark' : 'light';
-        
+
         // Aplicar tema ao HTML
         document.documentElement.setAttribute('data-theme', theme);
-        
+
         // Atualizar ícone e texto do botão
         const icon = document.getElementById('themeIcon');
         const text = document.getElementById('themeText');
-        
+
         if (icon) {
             icon.textContent = this.isDark ? '☀️' : '🌙';
         }
         if (text) {
             text.textContent = this.isDark ? 'Modo Claro' : 'Modo Escuro';
         }
-        
+
         // Salvar preferência
         localStorage.setItem('pensador_theme', theme);
-        
+
         console.log('🌓 Tema alterado para:', theme);
     },
 
@@ -41,11 +41,11 @@ const UI = {
     toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
-        
+
         if (!sidebar || !overlay) return;
-        
+
         this.isSidebarOpen = !this.isSidebarOpen;
-        
+
         if (this.isSidebarOpen) {
             sidebar.classList.add('open');
             overlay.classList.add('active');
@@ -55,14 +55,14 @@ const UI = {
             overlay.classList.remove('active');
             document.body.style.overflow = '';
         }
-        
+
         console.log('📱 Sidebar:', this.isSidebarOpen ? 'aberta' : 'fechada');
     },
 
     closeSidebar() {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
-        
+
         if (sidebar) sidebar.classList.remove('open');
         if (overlay) overlay.classList.remove('active');
         document.body.style.overflow = '';
@@ -73,21 +73,21 @@ const UI = {
     updateProfile(event) {
         const file = event.target.files[0];
         if (!file) return;
-        
+
         // Verificar se é imagem
         if (!file.type.startsWith('image/')) {
             alert('⚠️ Por favor, selecione uma imagem.');
             return;
         }
-        
+
         // Verificar tamanho (máx 2MB)
         if (file.size > 2 * 1024 * 1024) {
             alert('⚠️ Imagem muito grande. Máximo 2MB.');
             return;
         }
-        
+
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             const avatar = document.getElementById('profileAvatar');
             if (avatar) {
                 avatar.innerHTML = '<img src="' + e.target.result + '" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">';
@@ -95,7 +95,7 @@ const UI = {
                 console.log('📸 Foto de perfil atualizada');
             }
         };
-        reader.onerror = function() {
+        reader.onerror = function () {
             alert('❌ Erro ao carregar a imagem.');
         };
         reader.readAsDataURL(file);
@@ -131,7 +131,7 @@ const UI = {
                 avatar.innerHTML = '<img src="' + savedProfile + '" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">';
             }
         }
-        
+
         console.log('📂 Configurações carregadas:', {
             tema: savedTheme || 'light',
             foto: savedProfile ? 'sim' : 'não'
@@ -142,15 +142,16 @@ const UI = {
     setupMobileFixes() {
         const userInput = document.getElementById('userInput');
         const messagesContainer = document.getElementById('messagesContainer');
-        
+        const chatHeader = document.querySelector('.chat-header');
+
         if (!userInput) return;
 
         // 1. Corrigir teclado que tapa o input
-        userInput.addEventListener('focus', function() {
-            setTimeout(function() {
-                // Scroll suave para o input
+        userInput.addEventListener('focus', function () {
+            setTimeout(function () {
+                // Scroll suave para mostrar o input
                 userInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                
+
                 // Garantir que as mensagens vão para o fim
                 if (messagesContainer) {
                     messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -158,49 +159,59 @@ const UI = {
             }, 300);
         });
 
-        // 2. Detetar quando o teclado abre/fecha
+        // 2. Quando o input perde o foco, garantir topo visível
+        userInput.addEventListener('blur', function () {
+            setTimeout(function () {
+                // Scroll para mostrar o topo se necessário
+                if (messagesContainer && messagesContainer.scrollTop < 50) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }, 200);
+        });
+
+        // 3. Detetar teclado
         let lastHeight = window.innerHeight;
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             const currentHeight = window.innerHeight;
-            
+
             if (currentHeight < lastHeight) {
                 // Teclado abriu
                 document.body.classList.add('keyboard-open');
-                setTimeout(function() {
+                setTimeout(function () {
                     userInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
+                }, 150);
             } else {
                 // Teclado fechou
                 document.body.classList.remove('keyboard-open');
+                // Garantir que o header fica visível
+                if (chatHeader && window.scrollY > 100) {
+                    chatHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }
-            
+
             lastHeight = currentHeight;
         });
 
-        // 3. Fechar sidebar ao clicar fora (mobile)
-        document.addEventListener('click', function(e) {
-            const sidebar = document.getElementById('sidebar');
+        // 4. Fechar sidebar ao clicar fora
+        document.addEventListener('click', function (e) {
             const overlay = document.getElementById('sidebarOverlay');
-            
             if (e.target === overlay) {
                 UI.closeSidebar();
             }
-            
+
             // Fechar sidebar ao selecionar tópico (mobile)
             if (e.target.closest('.nav-item') || e.target.closest('.quick-btn')) {
                 if (window.innerWidth <= 768) {
-                    setTimeout(function() {
-                        UI.closeSidebar();
-                    }, 200);
+                    setTimeout(() => UI.closeSidebar(), 200);
                 }
             }
         });
 
-        // 4. Ajustar altura no iOS
+        // 5. iOS fix
         if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-            document.body.style.height = window.innerHeight + 'px';
-            window.addEventListener('resize', function() {
-                document.body.style.height = window.innerHeight + 'px';
+            document.documentElement.style.height = window.innerHeight + 'px';
+            window.addEventListener('resize', function () {
+                document.documentElement.style.height = window.innerHeight + 'px';
             });
         }
 
@@ -210,7 +221,7 @@ const UI = {
     // ===== EVENT LISTENERS =====
     setupEventListeners() {
         // Tecla ESC fecha sidebar
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && UI.isSidebarOpen) {
                 UI.closeSidebar();
             }
@@ -219,7 +230,7 @@ const UI = {
         // Clique no avatar para trocar foto
         const avatar = document.getElementById('profileAvatar');
         if (avatar) {
-            avatar.addEventListener('contextmenu', function(e) {
+            avatar.addEventListener('contextmenu', function (e) {
                 e.preventDefault();
                 if (confirm('Remover foto de perfil?')) {
                     UI.removeProfile();
@@ -241,7 +252,7 @@ const UI = {
 };
 
 // ===== INICIALIZAR =====
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     UI.init();
 });
 
