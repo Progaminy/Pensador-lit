@@ -1,19 +1,19 @@
-# 🧠 Pensador Sem Fronteira - LITE
-
-Versão 100% estática do Pensador Sem Fronteira.
-Funciona offline, no GitHub Pages ou em qualquer navegador.
-
-## 📁 Estrutura
-
-
-pensador-lite/
-├── index.html          ← Ficheiro principal
-├── css/
-│   ├── style.css       ← Estilos principais
-│   ├── dark.css        ← Tema escuro
-│   └── mobile.css      ← Responsivo mobile
-├── js/
-│   ├── knowledge.js    ← 🔧 TU VAIS EDITAR ESTE!
-│   ├── chat.js         ← Lógica do chat
-│   └── ui.js           ← Interface e temas
-└── README.md
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Minha Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Título Principal&lt;/h1&gt;
+    &lt;h2&gt;Subtítulo&lt;/h2&gt;
+    &lt;p&gt;Parágrafo de texto&lt;/p&gt;
+    &lt;a href="https://exemplo.com"&gt;Link&lt;/a&gt;
+    &lt;img src="foto.jpg" alt="Descrição"&gt;
+    
+    &lt;ul&gt;
+        &lt;li&gt;Item da lista&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;div&gt;Container de bloco&lt;/div&gt;
+    &lt;span&gt;Container inline&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>

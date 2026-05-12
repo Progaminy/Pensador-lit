@@ -8,7 +8,7 @@ const KnowledgeBase = {
         { id: 'css', name: '📚 CSS', cssClass: 'css-nav' },
         { id: 'javascript', name: '🤔 JavaScript', cssClass: 'js-nav' },
         { id: 'outros', name: '💬 Outros', cssClass: 'outros-nav' },
-        { id: 'brev', name: 'Brevimente', cssClass: 'brev-nav'}
+        { id: 'brev', name: 'Brevimente', cssClass: 'brev-nav' }
     ],
 
     // Conteúdo das bibliotecas
@@ -17,104 +17,202 @@ const KnowledgeBase = {
             title: '🔧 HTML - HyperText Markup Language',
             description: 'Aprenda a estrutura da web com HTML',
             items: {
-                'tags-html': {
-                    title: 'Tags HTML Básicas',
+                'comentario-html5': {
+                    title: 'Comentario em HTML',
                     content: `
-                        <h3>🏗️ Estrutura HTML</h3>
-                        <p>HTML é a base de toda página web. Aqui estão as tags essenciais:</p>
+                        <h3>🏗️ Comenatarios em HTML</h3>
+                        <p>Em HTML, comentários são trechos de texto que são ignorados pelo navegador. Eles servem para desenvolvedores organizarem o código, fazerem anotações ou desativarem partes do código temporariamente.</p>
+
+                        <h4> Comentário de uma linha:</h4>
+
                         <div class="code-block">
-                            <div class="code-body"><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="pt"&gt;
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;!-- Comentario --&gt;
+                                    </code>
+                                </pre>
+                            <div class="code-actions">
+                            
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
+                            </div>
+                        </div>
+
+                         <h4> Comentário de múltiplas linhas:</h4>
+                         
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;!--
+    Seção de depoimentos
+    Autor: Pensadoe Sem Fronteiras
+    Atualizado em: 12/05/2026
+    TODO: Adicionar mais depoimentos
+--&gt;
+                                    </code>
+                                </pre>
+                            <div class="code-actions">
+                            
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
+                            </div>
+                        </div>
+
+                        <h4> Desativando código temporariamente:</h4>
+                         
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;!--
+&lt;div class="banner-antigo"&gt;
+    &lt;p&gt;Este banner está desativado para testes&lt;/p&gt;
+&lt;/div&gt;
+--&gt;
+                                    </code>
+                                </pre>
+                            <div class="code-actions">
+                            
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
+                            </div>
+                        </div>
+                         <p>📌 <strong>Dica:</strong> Comente sempre o texo do codigo para que serve!</p>
+                    `
+                },
+
+                'codigo-base-html5': {
+                    title: 'Codigo base em HTML5',
+                    content: `
+                        <h3>Codigo base em HTML5</h3>
+                        <p>Para programar em HTML 5 e necessario o codigo base:</p>
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-pt"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Minha Página&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Título Principal&lt;/h1&gt;
-    &lt;h2&gt;Subtítulo&lt;/h2&gt;
-    &lt;p&gt;Parágrafo de texto&lt;/p&gt;
-    &lt;a href="https://exemplo.com"&gt;Link&lt;/a&gt;
-    &lt;img src="foto.jpg" alt="Descrição"&gt;
+
+    &lt;!-- Conteudo --&gt;
     
-    &lt;ul&gt;
-        &lt;li&gt;Item da lista&lt;/li&gt;
-    &lt;/ul&gt;
-    
-    &lt;div&gt;Container de bloco&lt;/div&gt;
-    &lt;span&gt;Container inline&lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre></div>
+&lt;/html&gt;
+                                    </code>
+                                </pre>
+                            </div>
                             <div class="code-actions">
                                 <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
                                 <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
-                                <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
-                        <p>📌 <strong>Dica:</strong> Sempre feche as tags e use indentação!</p>
+                         <p>📌 <strong>Dica:</strong> Sempre feche as tags e use indentação!</p>
                     `
                 },
-                'tags-semanticas': {
-                    title: 'Tags Semânticas HTML5',
+                'tags-html': {
+                    title: 'Tags em HTML',
                     content: `
-                        <h3>📐 HTML Semântico</h3>
-                        <p>Tags semânticas dão significado ao conteúdo, melhorando SEO e acessibilidade:</p>
+                        <h3>Tags em HTML</h3>
+                        <p>Tags são os elementos fundamentais do HTML. Elas definem a estrutura e o conteúdo de uma página web.</p>
+                        <p>As Tags sao classificadas em Categorias que sao:</p>
+                        <p><strong>Meta/head</strong> sao aquelas que fazem parte, head a extrutura base ou iniciaal do html</p>
+                        <p>O elemento &lt;head&gt; é a secção de metadados do HTML. Invisível ao utilizador, mas essencial para navegadores e motores de busca.</p>
+                        <h4>&lt;head&gt; Estrutura base inicial:</h4>
+                       
                         <div class="code-block">
-                            <div class="code-body"><pre><code>&lt;header&gt;
-    &lt;nav&gt;Menu de navegação&lt;/nav&gt;
-&lt;/header&gt;
 
-&lt;main&gt;
-    &lt;article&gt;
-        &lt;h1&gt;Título do Artigo&lt;/h1&gt;
-        &lt;section&gt;
-            &lt;h2&gt;Seção&lt;/h2&gt;
-            &lt;p&gt;Conteúdo...&lt;/p&gt;
-        &lt;/section&gt;
-    &lt;/article&gt;
-    
-    &lt;aside&gt;Conteúdo lateral&lt;/aside&gt;
-&lt;/main&gt;
-
-&lt;footer&gt;© 2026&lt;/footer&gt;</code></pre></div>
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Título da Página&lt;/title&gt;
+&lt;meta name="description" content="Descrição da página"&gt;
+&lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Conteúdo visível --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                    </code>
+                                </pre>
+                            </div>
                             <div class="code-actions">
                                 <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
                                 <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
-                    `
-                },
-                'box-model': {
-                    title: 'Box Model (Modelo de Caixa)',
-                    content: `
-                        <h3>📦 Box Model CSS</h3>
-                        <p>Todo elemento HTML é uma caixa retangular:</p>
+
+                        <p>Tag para Definir o título da página. Aparece no separador do navegador. Obrigatória</p>
+                        
+                        <h4>&lt;title&gt; title - titulo da pagina:</h4>
+                       
                         <div class="code-block">
-                            <div class="code-body"><pre><code>.elemento {
-    /* Conteúdo */
-    width: 300px;
-    height: 200px;
-    
-    /* Preenchimento interno */
-    padding: 20px;
-    
-    /* Borda */
-    border: 2px solid #333;
-    
-    /* Margem externa */
-    margin: 30px;
-    
-    /* Box sizing recomendado */
-    box-sizing: border-box;
-}</code></pre></div>
+
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;title&gt;Título da Página&lt;/title&gt;
+                                    </code>
+                                </pre>
+                            </div>
                             <div class="code-actions">
                                 <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
-                                <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
-                        <p>📏 <strong>Ordem:</strong> Content → Padding → Border → Margin</p>
+
+                        <p>Tag para Definir letras que aceitam acentos</p>
+                        
+                        <h4>&lt;title&gt; Charset::</h4>
+                       
+                        <div class="code-block">
+
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+&lt;meta charset="UTF-8"&gt;
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
+                            </div>
+                        </div>
                     `
-                }
+
+                },
+
+
+
+
+
+
             }
+
+            
+
+
+
+
         },
         css: {
             title: '📚 CSS - Cascading Style Sheets',
@@ -260,16 +358,16 @@ const soma = numeros.reduce((a, b) => a + b, 0);</code></pre></div>
 
 // ===== RENDERIZAR MENUS =====
 function renderNavigation() {
-    const navHTML = KnowledgeBase.categories.map(cat => 
+    const navHTML = KnowledgeBase.categories.map(cat =>
         `<button class="nav-item ${cat.cssClass}" onclick="Chat.showTopicOptions('${cat.id}')">${cat.name}</button>`
     ).join('');
-    
+
     document.getElementById('navButtons').innerHTML = navHTML;
 
     const quickHTML = KnowledgeBase.categories.slice(0, 4).map(cat =>
         `<button class="quick-btn" onclick="Chat.showTopicOptions('${cat.id}')">${cat.name}</button>`
     ).join('');
-    
+
     document.getElementById('quickActions').innerHTML = quickHTML;
 }
 

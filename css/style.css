@@ -537,3 +537,7 @@ body {
 [data-theme="dark"] .profile-avatar {
     background: linear-gradient(135deg, #39ff14, #2ecc71);
 }
+h4 {
+    color: white;
+    background-color: #095f8a;
+}
