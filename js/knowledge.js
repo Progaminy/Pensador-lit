@@ -178,9 +178,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -198,9 +198,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -218,9 +218,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -238,9 +238,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -261,9 +261,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -281,9 +281,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -303,9 +303,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -321,9 +321,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -340,9 +340,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -359,9 +359,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
                         <h5>exemplo com link de <strong>Canonical:</strong> externo</h5>
@@ -377,9 +377,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -411,9 +411,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -438,9 +438,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -457,9 +457,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -479,9 +479,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -503,9 +503,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                             <p>Regra de ouro: a última tag a abrir deve ser a primeira a fechar.</p>
                         </div>
@@ -558,9 +558,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                             <p>Regra de ouro: e importamnte manter a estrutura duma forma semantica, isso ajuda o navegador para busca e filtros.</p>
                         </div>
@@ -583,9 +583,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -600,9 +600,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -617,9 +617,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -634,9 +634,9 @@ const KnowledgeBase = {
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -647,26 +647,24 @@ const KnowledgeBase = {
                             <div class="code-body">
                                 <pre>
                                     <code>
-<h4>&lt;!-- Citacao basica --&gt</h4>
+<h4> Citacao basica </h4>
 &lt;blockquote&gt;
-    <blockquote>
     &lt;p&gt;A citacao .&lt;/p&gt;
     &lt;cite&gt;— Nome do autor&lt;/cite&gt;
-    </blockquote>
 &lt;/blockquote&gt;
 
-<h4>&lt;!-- Citacao com atributo --&gt;</h4>
+<h4> Citacao com atributo </h4>
 &lt;blockquote cite="https://www.exemplo.com/artigo".&gt;
     &lt;p&gt;Escrecer o texto a citacao.&lt;/p&gt;
-    &lt;footer&gt; <footer> — Nome ou fonte exeterna </footer>    &lt;/footer&gt;
+    &lt;footer&gt; — Nome ou fonte exeterna &lt;/footer&gt;
 &lt;/blockquote&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -677,20 +675,20 @@ const KnowledgeBase = {
                             <div class="code-body">
                                 <pre>
                                     <code>
-<h4>&lt;!-- Citacao basica inline --&gt</h4>
-&lt;p&gt;nome do autor/ name da fonte disse: &lt;q&gt; <q>a citacao</q>.&lt;/p&gt;
+<h4> Citacao basica inline </h4>
+&lt;p&gt;nome do autor/ name da fonte disse: &lt;q&gt;a citacao.&lt;/p&gt;
 
-<h4>&lt;!-- Citacao inline com atriibuto --&gt</h4>
-&lt;p>Como diz o artigo: 
-   &lt;q <q>cite="https://exemplo.com/html/"&gt;o texto citado&lt; </q>/q&gt;.
-&lt;/p>
+<h4> Citacao inline com atriibuto </h4>
+&lt;p&gt;Como diz o artigo: 
+   &lt;q cite="https://exemplo.com/html/"&gt;o texto citado &lt;/q&gt;.
+&lt;/p&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -704,18 +702,16 @@ const KnowledgeBase = {
                                 <pre>
                                     <code>
 &lt;pre&gt;
-<pre>
 Texto 
 pre-formatdo
-</pre>
 &lt/pre&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -736,9 +732,9 @@ pre-formatdo
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -749,14 +745,14 @@ pre-formatdo
                             <div class="code-body">
                                 <pre>
                                     <code>
-<p>&lt;p&gt;Texto quebrado &lt;br&gt; nova linha&lt;/p&gt;</p>
+&lt;p&gt; Texto quebrado &lt;br&gt; nova linha &lt;/p&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -767,16 +763,16 @@ pre-formatdo
                             <div class="code-body">
                                 <pre>
                                     <code>
-<p>&lt;p&gt;Texto 1 &lt;/p&gt;</p>
+&lt;p&gt; Texto 1 &lt;/p&gt;
 &lt;hr&gt;
-<p>&lt;p&gt;Texto 2 &lt;/p&gt;</p>
+&lt;p&gt;Texto 2 &lt;/p&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -790,18 +786,18 @@ pre-formatdo
                                 <pre>
                                     <code>
 &lt;p&gt;<strong>Lista 1</strong>&lt;/p&gt;
-<p>&lt;p&gt;ul;/p&gt;</p>
+&lt;ul&gt;
     &lt;li&gt;intem 1&lt;/li&gt;
     &lt;li&gt;item 2&lt;/li&gt;
     &lt;li&gt;item 3&lt;/li&gt;
-<p>&lt;p&gt;ul;/p&gt;</p>
+&lt;/ul&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -813,18 +809,18 @@ pre-formatdo
                                 <pre>
                                     <code>
 &lt;p&gt;<strong>Lista 1</strong>&lt;/p&gt;
-<p>&lt;p&gt;ol;/p&gt;</p>
+&lt;ol;gt;
     &lt;li&gt;intem 1&lt;/li&gt;
     &lt;li&gt;item 2&lt;/li&gt;
     &lt;li&gt;item 3&lt;/li&gt;
-<p>&lt;p&gt;ol;/p&gt;</p>
+&lt;/ol&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
 
@@ -836,18 +832,18 @@ pre-formatdo
                                 <pre>
                                     <code>
 &lt;p&gt;<strong>Lista 1</strong>&lt;/p&gt;
-<p>&lt;p&gt;ol type="1";/p&gt;</p>
+&lt;ol type="1"&gt;
     &lt;li&gt;intem 1&lt;/li&gt;
     &lt;li&gt;item 2&lt;/li&gt;
     &lt;li&gt;item 3&lt;/li&gt;
-<p>&lt;p&gt;ol;/p&gt;</p>
+&lt;/ol&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                             <p>A numeracao sera automatica.</p>
                         </div>
@@ -861,18 +857,18 @@ pre-formatdo
                                 <pre>
                                     <code>
 &lt;p&gt;<strong>Lista 1</strong>&lt;/p&gt;
-<p>&lt;p&gt;ol type="5";/p&gt;</p>
+&lt;ol type="5" &gt;
     &lt;li&gt;intem 1&lt;/li&gt;
     &lt;li&gt;item 2&lt;/li&gt;
     &lt;li&gt;item 3&lt;/li&gt;
-<p>&lt;p&gt;ol;/p&gt;</p>
+&lt;/ol&gt;
                                     </code>
                                 </pre>
                             </div>
                             <div class="code-actions">
-                                <span><button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button></span>
-                                <span><button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button></span>
-                                 <span><button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button></span>
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
+                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                             <p>A numeracao sera automatica.</p>
                         </div>

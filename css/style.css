@@ -541,3 +541,7 @@ h4 {
     color: white;
     background-color: #095f8a;
 }
+
+.code-actions {
+    display: flex; gap: 10px;
+}
