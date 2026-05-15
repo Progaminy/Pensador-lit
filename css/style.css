@@ -545,3 +545,70 @@ h4 {
 .code-actions {
     display: flex; gap: 10px;
 }
+
+ table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #4a5568;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .atributo {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #e53e3e;
+            background: #fff5f5;
+        }
+        
+        .descricao {
+            color: #2d3748;
+        }
+        
+        .exemplo {
+            font-family: 'Courier New', monospace;
+            color: #38a169;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .badge {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            h1 {
+                font-size: 1.4em;
+                padding: 15px;
+            }
+        }
