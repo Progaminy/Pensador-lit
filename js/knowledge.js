@@ -1136,11 +1136,8 @@ pre-formatdo
 </a>
 <p>
     ✅ Funciona no mesmo domínio
-    
     ❌ Não funciona para imagens de outros sites (cross-origin)
-    
     ❌ Navegadores antigos ignoram
-    
     ⚠️ Alguns navegadores abrem a imagem em vez de baixar
 </p>
 
@@ -1549,133 +1546,12 @@ p {
 
                         <h3>Cores em CSS</h3>
 
+                        <h4>🎨 Formas de Definir Cores em CSS</h4>
+
                         <div class="code-block">
                             <div class="code-body">
                                 <pre>
                                     <code>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formas de Definir Cores em CSS</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            max-width: 1200px;
-            width: 100%;
-            margin: 20px;
-        }
-        
-        h1 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin: 0;
-            padding: 25px;
-            text-align: center;
-            font-size: 1.8em;
-        }
-        
-        h4 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin: 0;
-            padding: 15px 25px;
-            text-align: center;
-            font-size: 1.2em;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-        
-        th {
-            background: #4a5568;
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 1.1em;
-            text-align: left;
-        }
-        
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        tr:hover {
-            background: #f7fafc;
-        }
-        
-        .tipo {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: #e53e3e;
-            background: #fff5f5;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .exemplo-cor {
-            font-family: 'Courier New', monospace;
-            color: #38a169;
-            background: #f0fff4;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .descricao {
-            color: #2d3748;
-        }
-        
-        .color-preview {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border-radius: 6px;
-            margin-right: 10px;
-            vertical-align: middle;
-            border: 1px solid #cbd5e0;
-        }
-        
-        @media (max-width: 768px) {
-            table {
-                font-size: 14px;
-            }
-            
-            th, td {
-                padding: 8px 10px;
-            }
-            
-            h1, h4 {
-                font-size: 1.4em;
-                padding: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🎨 Formas de Definir Cores em CSS</h1>
         <h4>📌 5 maneiras diferentes de aplicar cores</h4>
         <table>
             <thead>
@@ -1738,9 +1614,6 @@ p {
                 </tr>
             </tbody>
         </table>
-    </div>
-</body>
-</html>
 
                                     </code>
                                 </pre>
@@ -1750,142 +1623,12 @@ p {
                             </div>
                         </div>
 
-                         <h3>Unidades de medida básicas</h3>
+                       <h4>📏 Unidades de Medida em CSS</h4>
 
                         <div class="code-block">
                             <div class="code-body">
                                 <pre>
                                     <code>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidades de Medida em CSS</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            max-width: 1000px;
-            width: 100%;
-            margin: 20px;
-        }
-        
-        h1 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin: 0;
-            padding: 25px;
-            text-align: center;
-            font-size: 1.8em;
-        }
-        
-        h4 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin: 0;
-            padding: 15px 25px;
-            text-align: center;
-            font-size: 1.2em;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-        
-        th {
-            background: #4a5568;
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 1.1em;
-            text-align: left;
-        }
-        
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        tr:hover {
-            background: #f7fafc;
-        }
-        
-        .unidade {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: #e53e3e;
-            background: #fff5f5;
-            padding: 4px 12px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .tipo {
-            font-weight: 600;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .tipo.absoluta {
-            background: #fef3c7;
-            color: #d69e2e;
-        }
-        
-        .tipo.relativa {
-            background: #e0f2fe;
-            color: #0284c7;
-        }
-        
-        .exemplo {
-            font-family: 'Courier New', monospace;
-            color: #38a169;
-            background: #f0fff4;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .descricao {
-            color: #2d3748;
-        }
-        
-        @media (max-width: 768px) {
-            table {
-                font-size: 14px;
-            }
-            
-            th, td {
-                padding: 8px 10px;
-            }
-            
-            h1, h4 {
-                font-size: 1.4em;
-                padding: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>📏 Unidades de Medida em CSS</h1>
         <h4>📐 Unidades absolutas e relativas</h4>
         <table>
             <thead>
@@ -1923,9 +1666,6 @@ p {
                 </tr>
             </tbody>
         </table>
-    </div>
-</body>
-</html>
 
                                     </code>
                                 </pre>
@@ -1940,165 +1680,13 @@ p {
 
                         <h4>Manusear cores em elentos em cad propriedade</h4>
 
+                        <h4>📊 TABELA DE CORES EM CSS</h4>
+
                          <div class="code-block">
                             <div class="code-body">
                                 <pre>
                                     <code>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📊 Tabela de Cores em CSS - Versão Expansiva</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            max-width: 1400px;
-            width: 100%;
-            margin: 20px;
-        }
-        
-        h1 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin: 0;
-            padding: 25px;
-            text-align: center;
-            font-size: 1.8em;
-        }
-        
-        .subtitle {
-            background: #edf2f7;
-            color: #4a5568;
-            padding: 12px 25px;
-            text-align: center;
-            font-size: 1em;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-        
-        th {
-            background: #4a5568;
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 1.1em;
-            text-align: left;
-            position: sticky;
-            top: 0;
-        }
-        
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e2e8f0;
-            vertical-align: top;
-        }
-        
-        tr:hover {
-            background: #f7fafc;
-        }
-        
-        .numero {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: #e53e3e;
-            background: #fff5f5;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            text-align: center;
-            min-width: 35px;
-        }
-        
-        .o-que-muda {
-            font-weight: 600;
-            color: #2d3748;
-        }
-        
-        .propriedade {
-            font-family: 'Courier New', monospace;
-            color: #3182ce;
-            background: #ebf8ff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            font-size: 0.9em;
-        }
-        
-        .exemplo-css {
-            font-family: 'Courier New', monospace;
-            color: #38a169;
-            background: #f0fff4;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            font-size: 0.85em;
-        }
-        
-        .badge {
-            background: #edf2f7;
-            color: #4a5568;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.75em;
-            margin-left: 5px;
-        }
-        
-        .note {
-            background: #fef3c7;
-            color: #92400e;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            display: inline-block;
-        }
-        
-        @media (max-width: 768px) {
-            table {
-                font-size: 13px;
-            }
-            
-            th, td {
-                padding: 8px 10px;
-            }
-            
-            h1 {
-                font-size: 1.4em;
-                padding: 15px;
-            }
-            
-            .propriedade, .exemplo-css {
-                font-size: 0.8em;
-                padding: 2px 5px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>📊 TABELA DE CORES EM CSS</h1>
         <div class="subtitle">🎨 Versão Expansiva - 35 formas de aplicar cores</div>
-        
-        <div style="overflow-x: auto;">
             <table>
                 <thead>
                     <tr>
@@ -2146,10 +1734,6 @@ p {
                     <tr><td><span class="numero">35</span></td><td class="o-que-muda">Cor da sombra de foco</td><td><code class="propriedade">box-shadow</code></td><td><code class="exemplo-css">input:focus { box-shadow: 0 0 0 3px rgba(0,100,255,0.3); }</code></td></tr>
                 </tbody>
             </table>
-        </div>
-    </div>
-</body>
-</html>
                                     </code>
                                 </pre> 
                             </div>
