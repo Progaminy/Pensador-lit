@@ -1420,23 +1420,10 @@ function tocarAudio() {
                             
                         </div>
 
-
-                        
-
                     `
-
                 },
 
-
-
-
-
-
             }
-
-
-
-
 
 
         },
@@ -1444,50 +1431,163 @@ function tocarAudio() {
             title: '📚 CSS - Cascading Style Sheets',
             description: 'Estilize suas páginas com CSS',
             items: {
-                'flexbox': {
-                    title: 'Flexbox Layout',
+                'introducao-css': {
+                    title: 'Introducao ao CSS',
                     content: `
-                        <h3>🎯 Flexbox</h3>
-                        <p>Layout moderno e flexível:</p>
-                        <div class="code-block">
-                            <div class="code-body"><pre><code>.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+                        <h3>📊 CSS - Introducao</h3>
 
-.item {
-    flex: 1;
-    min-width: 200px;
-    padding: 20px;
-}</code></pre></div>
+                        <dl>
+                            <dt> <strong>C</strong> </dt>
+                            <dd> Cascading (Cascata)</dd>
+                            <dt> <strong>S</strong> </dt>
+                            <dd> Style (Estilo)</dd>
+                            <dt> <strong>S</strong> </dt>
+                            <dd> Sheets (Folha)</dd>
+                        </dl>
+                                    
+                        <h4>Sintaxe básica</h4>
+
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+seletor {
+  propriedade: valor;
+  propriedade2: valor;
+}
+                                    </code>
+                                </pre>
+                            </div>
                             <div class="code-actions">
                                 <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
                             </div>
                         </div>
+
+                        <h3>Três formas de aplicar CSS</h3>
+
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+ <h4>CSS Inline (dentro da tag HTML)</h4>
+<p style="color: blue;">Texto azul</p>
+
+<h4>CSS Interno (dentro do <head> do HTML)</h4>
+<p>No HTML (<head>):</p>
+<style>
+  p {
+    color: green;
+  }
+</style>
+
+<h4>CSS Externo (arquivo separado .css) – MELHOR PRÁTICA</h4>
+<p>No HTML (<head>):</p>
+<link rel="stylesheet" href="estilo.css">
+<p>Arquivo estilo.css:</p>
+p {
+  color: purple;
+}
+
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                            </div>
+                        </div>
+
+                        <h3>Tipos de seletores (mais usados)</h3>
+
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+ <h4>Seletor 	HTML                     CSS         oque faz</h4>
+    
+Elemento	    <p>	                    p { }        Seleciona todos os <p>
+Classe (.)	    class="destaque"   .destaque { }	Seleciona elementos com class="destaque"
+ID (#)	        id="cabecalho"      #cabecalho { }	Seleciona o elemento com id="cabecalho"
+
+Universal	* { }	Seleciona todos os elementos
+
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                            </div>
+                        </div>
+
+                        <h3>Cores em CSS</h3>
+
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+<h4>Formas de definir cor:</h4>
+    
+Tipo	Exemplo	                 Descrição
+Nome	red, blue,               tomato	140+ nomes pré-definidos
+Hex 	#FF0000,        	    6 dígitos (RRGGBB)
+RGB 	rgb(255, 0, 0)	        0–255 cada canal
+RGBA	rgba(255,0,0,0.5)	    Com transparência
+HSL 	hsl(0, 100%, 50%)	    Matiz, Saturação, Luminosidade
+
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                            </div>
+                        </div>
+
+                         <h3>Unidades de medida básicas</h3>
+
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+<h4>Unidades de medida básicas:</h4>
+
+Unidade	        Tipo	                            Exemplo de uso
+px	            Absoluta	                        font-size: 16px; (tela)
+%	            Relativa (ao pai)	                width: 50%;
+em	            Relativa ao font-size do elemento	margin: 2em;
+rem	            Relativa ao font-size do <html>	    padding: 1rem;
+
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                            </div>
+                        </div>
+
+                         <h3>Cores em CSS</h3>
+
+                        <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+
+
+                                    </code>
+                                </pre>
+                            </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                            </div>
+                        </div>
+                        
+
                     `
                 },
                 'grid': {
                     title: 'CSS Grid',
                     content: `
-                        <h3>📊 Grid Layout</h3>
-                        <div class="code-block">
-                            <div class="code-body"><pre><code>.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.grid-item {
-    padding: 30px;
-    background: #f0f0f0;
-}</code></pre></div>
-                            <div class="code-actions">
-                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
-                            </div>
-                        </div>
+                       
+                           
+                         
                     `
                 }
             }
