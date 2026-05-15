@@ -1284,10 +1284,8 @@ pre-formatdo
 
 
                         <h4>Tabela de atributos para videos</h4>
-                        <p><strong>a (âncora)</strong> serve para criar links que permitem a navegação entre páginas, seções ou recursos, seja no próprio site ou em sites externos.</p>
 
                         <div class="code-block">
-
                             <div class="code-body">
                                 <pre>
                                     <code>
@@ -1487,7 +1485,6 @@ seletor {
 p {
   color: purple;
 }
-
                                     </code>
                                 </pre>
                             </div>
@@ -1502,13 +1499,45 @@ p {
                             <div class="code-body">
                                 <pre>
                                     <code>
- <h4>Seletor 	HTML                     CSS         oque faz</h4>
-    
-Elemento	    <p>	                    p { }        Seleciona todos os <p>
-Classe (.)	    class="destaque"   .destaque { }	Seleciona elementos com class="destaque"
-ID (#)	        id="cabecalho"      #cabecalho { }	Seleciona o elemento com id="cabecalho"
 
-Universal	* { }	Seleciona todos os elementos
+
+<h1>🎨 Seletores CSS - Guia Completo</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Seletor</th>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="seletor">Elemento</span></td>
+                    <td><code class="html-code">&lt;p&gt;</code></td>
+                    <td><code class="css-code">p { }</code></td>
+                    <td class="descricao">Seleciona todos os elementos &lt;p&gt;</td>
+                </tr>
+                <tr>
+                    <td><span class="seletor">Classe (.)</span></td>
+                    <td><code class="html-code">class="destaque"</code></td>
+                    <td><code class="css-code">.destaque { }</code></td>
+                    <td class="descricao">Seleciona elementos com class="destaque"</td>
+                </tr>
+                <tr>
+                    <td><span class="seletor">ID (#)</span></td>
+                    <td><code class="html-code">id="cabecalho"</code></td>
+                    <td><code class="css-code">#cabecalho { }</code></td>
+                    <td class="descricao">Seleciona o elemento com id="cabecalho"</td>
+                </tr>
+                <tr>
+                    <td><span class="seletor">Universal (*)</span></td>
+                    <td><code class="html-code">*</code></td>
+                    <td><code class="css-code">* { }</code></td>
+                    <td class="descricao">Seleciona todos os elementos da página</td>
+                </tr>
+            </tbody>
+        </table>
 
                                     </code>
                                 </pre>
@@ -1524,14 +1553,194 @@ Universal	* { }	Seleciona todos os elementos
                             <div class="code-body">
                                 <pre>
                                     <code>
-<h4>Formas de definir cor:</h4>
-    
-Tipo	Exemplo	                 Descrição
-Nome	red, blue,               tomato	140+ nomes pré-definidos
-Hex 	#FF0000,        	    6 dígitos (RRGGBB)
-RGB 	rgb(255, 0, 0)	        0–255 cada canal
-RGBA	rgba(255,0,0,0.5)	    Com transparência
-HSL 	hsl(0, 100%, 50%)	    Matiz, Saturação, Luminosidade
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Definir Cores em CSS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px;
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        
+        h4 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 1.2em;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #4a5568;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .tipo {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #e53e3e;
+            background: #fff5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .exemplo-cor {
+            font-family: 'Courier New', monospace;
+            color: #38a169;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .descricao {
+            color: #2d3748;
+        }
+        
+        .color-preview {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 1px solid #cbd5e0;
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            h1, h4 {
+                font-size: 1.4em;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Formas de Definir Cores em CSS</h1>
+        <h4>📌 5 maneiras diferentes de aplicar cores</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Exemplo</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="tipo">Nome</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: tomato;"></div>
+                            <code class="exemplo-cor">red, blue, tomato</code>
+                        </div>
+                    </td>
+                    <td class="descricao">140+ nomes pré-definidos</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">Hex</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: #FF0000;"></div>
+                            <code class="exemplo-cor">#FF0000</code>
+                        </div>
+                    </td>
+                    <td class="descricao">6 dígitos (RRGGBB)</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">RGB</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: rgb(255, 0, 0);"></div>
+                            <code class="exemplo-cor">rgb(255, 0, 0)</code>
+                        </div>
+                    </td>
+                    <td class="descricao">0–255 cada canal</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">RGBA</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: rgba(255, 0, 0, 0.5);"></div>
+                            <code class="exemplo-cor">rgba(255,0,0,0.5)</code>
+                        </div>
+                    </td>
+                    <td class="descricao">Com transparência</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">HSL</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: hsl(0, 100%, 50%);"></div>
+                            <code class="exemplo-cor">hsl(0, 100%, 50%)</code>
+                        </div>
+                    </td>
+                    <td class="descricao">Matiz, Saturação, Luminosidade</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
 
                                     </code>
                                 </pre>
@@ -1547,49 +1756,508 @@ HSL 	hsl(0, 100%, 50%)	    Matiz, Saturação, Luminosidade
                             <div class="code-body">
                                 <pre>
                                     <code>
-<h4>Unidades de medida básicas:</h4>
-
-Unidade	        Tipo	                            Exemplo de uso
-px	            Absoluta	                        font-size: 16px; (tela)
-%	            Relativa (ao pai)	                width: 50%;
-em	            Relativa ao font-size do elemento	margin: 2em;
-rem	            Relativa ao font-size do <html>	    padding: 1rem;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de Medida em CSS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px;
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        
+        h4 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 1.2em;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #4a5568;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .unidade {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #e53e3e;
+            background: #fff5f5;
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .tipo {
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .tipo.absoluta {
+            background: #fef3c7;
+            color: #d69e2e;
+        }
+        
+        .tipo.relativa {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+        
+        .exemplo {
+            font-family: 'Courier New', monospace;
+            color: #38a169;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .descricao {
+            color: #2d3748;
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            h1, h4 {
+                font-size: 1.4em;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📏 Unidades de Medida em CSS</h1>
+        <h4>📐 Unidades absolutas e relativas</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Unidade</th>
+                    <th>Tipo</th>
+                    <th>Exemplo de uso</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="unidade">px</span></td>
+                    <td><span class="tipo absoluta">Absoluta</span></td>
+                    <td><code class="exemplo">font-size: 16px;</code></td>
+                    <td class="descricao">Pixel - unidade fixa para tela</td>
+                </tr>
+                <tr>
+                    <td><span class="unidade">%</span></td>
+                    <td><span class="tipo relativa">Relativa</span></td>
+                    <td><code class="exemplo">width: 50%;</code></td>
+                    <td class="descricao">Relativa ao elemento pai</td>
+                </tr>
+                <tr>
+                    <td><span class="unidade">em</span></td>
+                    <td><span class="tipo relativa">Relativa</span></td>
+                    <td><code class="exemplo">margin: 2em;</code></td>
+                    <td class="descricao">Relativa ao font-size do elemento</td>
+                </tr>
+                <tr>
+                    <td><span class="unidade">rem</span></td>
+                    <td><span class="tipo relativa">Relativa</span></td>
+                    <td><code class="exemplo">padding: 1rem;</code></td>
+                    <td class="descricao">Relativa ao font-size do &lt;html&gt; (root)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
 
                                     </code>
                                 </pre>
+                            </div>
+                        </div>    
+
+                    `
+                },
+                'Cores-Css': {
+                    title: 'Cores em Css',
+                    content: `<h3>Cores em CSS - Aplicar cor nos elemetos</h3>
+
+                        <h4>Manusear cores em elentos em cad propriedade</h4>
+
+                         <div class="code-block">
+                            <div class="code-body">
+                                <pre>
+                                    <code>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Tabela de Cores em CSS - Versão Expansiva</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            max-width: 1400px;
+            width: 100%;
+            margin: 20px;
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        
+        .subtitle {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 12px 25px;
+            text-align: center;
+            font-size: 1em;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: #4a5568;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: left;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .numero {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #e53e3e;
+            background: #fff5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: center;
+            min-width: 35px;
+        }
+        
+        .o-que-muda {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .propriedade {
+            font-family: 'Courier New', monospace;
+            color: #3182ce;
+            background: #ebf8ff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.9em;
+        }
+        
+        .exemplo-css {
+            font-family: 'Courier New', monospace;
+            color: #38a169;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.85em;
+        }
+        
+        .badge {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            margin-left: 5px;
+        }
+        
+        .note {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            display: inline-block;
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                font-size: 13px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            h1 {
+                font-size: 1.4em;
+                padding: 15px;
+            }
+            
+            .propriedade, .exemplo-css {
+                font-size: 0.8em;
+                padding: 2px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 TABELA DE CORES EM CSS</h1>
+        <div class="subtitle">🎨 Versão Expansiva - 35 formas de aplicar cores</div>
+        
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">#</th>
+                        <th style="width: 35%;">O que muda de cor</th>
+                        <th style="width: 30%;">Propriedade / Seletor</th>
+                        <th style="width: 30%;">Exemplo CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="numero">1</span></td><td class="o-que-muda">Texto comum</td><td><code class="propriedade">color</code></td><td><code class="exemplo-css">p { color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">2</span></td><td class="o-que-muda">Fundo do elemento</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">div { background-color: yellow; }</code></td></tr>
+                    <tr><td><span class="numero">3</span></td><td class="o-que-muda">Borda completa</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">img { border: 2px solid red; }</code></td></tr>
+                    <tr><td><span class="numero">4</span></td><td class="o-que-muda">Apenas uma borda</td><td><code class="propriedade">border-top-color</code></td><td><code class="exemplo-css">h1 { border-top-color: green; }</code></td></tr>
+                    <tr><td><span class="numero">5</span></td><td class="o-que-muda">Sombra da caixa (box)</td><td><code class="propriedade">box-shadow <span class="badge">inclui cor</span></code></td><td><code class="exemplo-css">div { box-shadow: 0 0 10px rgba(0,0,0,0.5); }</code></td></tr>
+                    <tr><td><span class="numero">6</span></td><td class="o-que-muda">Sombra do texto</td><td><code class="propriedade">text-shadow <span class="badge">inclui cor</span></code></td><td><code class="exemplo-css">h1 { text-shadow: 2px 2px 4px gray; }</code></td></tr>
+                    <tr><td><span class="numero">7</span></td><td class="o-que-muda">Sublinhado / linha decorativa</td><td><code class="propriedade">text-decoration-color</code></td><td><code class="exemplo-css">a { text-decoration: underline; text-decoration-color: red; }</code></td></tr>
+                    <tr><td><span class="numero">8</span></td><td class="o-que-muda">Marcador de lista (•, 1., etc)</td><td><code class="propriedade">::marker</code></td><td><code class="exemplo-css">li::marker { color: orange; }</code></td></tr>
+                    <tr><td><span class="numero">9</span></td><td class="o-que-muda">Placeholder de input</td><td><code class="propriedade">::placeholder</code></td><td><code class="exemplo-css">input::placeholder { color: gray; }</code></td></tr>
+                    <tr><td><span class="numero">10</span></td><td class="o-que-muda">Texto selecionado</td><td><code class="propriedade">::selection</code></td><td><code class="exemplo-css">p::selection { background: black; color: lime; }</code></td></tr>
+                    <tr><td><span class="numero">11</span></td><td class="o-que-muda">Link não visitado</td><td><code class="propriedade">a:link</code></td><td><code class="exemplo-css">a:link { color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">12</span></td><td class="o-que-muda">Link já visitado</td><td><code class="propriedade">a:visited</code></td><td><code class="exemplo-css">a:visited { color: purple; }</code></td></tr>
+                    <tr><td><span class="numero">13</span></td><td class="o-que-muda">Link com mouse em cima</td><td><code class="propriedade">a:hover</code></td><td><code class="exemplo-css">a:hover { color: gold; }</code></td></tr>
+                    <tr><td><span class="numero">14</span></td><td class="o-que-muda">Link no momento do clique</td><td><code class="propriedade">a:active</code></td><td><code class="exemplo-css">a:active { color: red; }</code></td></tr>
+                    <tr><td><span class="numero">15</span></td><td class="o-que-muda">Fundo da barra de rolagem</td><td><code class="propriedade">::-webkit-scrollbar-track</code></td><td><code class="exemplo-css">::-webkit-scrollbar-track { background: #f1f1f1; }</code></td></tr>
+                    <tr><td><span class="numero">16</span></td><td class="o-que-muda">Polegar da barra de rolagem</td><td><code class="propriedade">::-webkit-scrollbar-thumb</code></td><td><code class="exemplo-css">::-webkit-scrollbar-thumb { background: #888; }</code></td></tr>
+                    <tr><td><span class="numero">17</span></td><td class="o-que-muda">Bolinha do slider (range)</td><td><code class="propriedade">::-webkit-slider-thumb</code></td><td><code class="exemplo-css">input[type="range"]::-webkit-slider-thumb { background: red; }</code></td></tr>
+                    <tr><td><span class="numero">18</span></td><td class="o-que-muda">Trilha do slider</td><td><code class="propriedade">::-webkit-slider-runnable-track</code></td><td><code class="exemplo-css">input[type="range"]::-webkit-slider-runnable-track { background: blue; }</code></td></tr>
+                    <tr><td><span class="numero">19</span></td><td class="o-que-muda">Checkbox/radio nativo</td><td><code class="propriedade">accent-color</code></td><td><code class="exemplo-css">input[type="checkbox"] { accent-color: green; }</code></td></tr>
+                    <tr><td><span class="numero">20</span></td><td class="o-que-muda">Linha &lt;hr&gt;</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">hr { border-color: magenta; }</code></td></tr>
+                    <tr><td><span class="numero">21</span></td><td class="o-que-muda">Cor de fundo do &lt;body&gt;</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">body { background-color: #f0f0f0; }</code></td></tr>
+                    <tr><td><span class="numero">22</span></td><td class="o-que-muda">Cor de fundo de tabela</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">td { background-color: lightblue; }</code></td></tr>
+                    <tr><td><span class="numero">23</span></td><td class="o-que-muda">Cor da borda de tabela</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">table, th, td { border-color: navy; }</code></td></tr>
+                    <tr><td><span class="numero">24</span></td><td class="o-que-muda">Cor do foco no campo (focus)</td><td><code class="propriedade">outline-color</code></td><td><code class="exemplo-css">input:focus { outline-color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">25</span></td><td class="o-que-muda">Cor do campo inválido</td><td><code class="propriedade">border-color + :invalid</code></td><td><code class="exemplo-css">input:invalid { border-color: red; }</code></td></tr>
+                    <tr><td><span class="numero">26</span></td><td class="o-que-muda">Cor do campo válido</td><td><code class="propriedade">border-color + :valid</code></td><td><code class="exemplo-css">input:valid { border-color: green; }</code></td></tr>
+                    <tr><td><span class="numero">27</span></td><td class="o-que-muda">Cor de itens de menu suspenso</td><td><code class="propriedade">background-color / color</code></td><td><code class="exemplo-css">select option { background-color: beige; }</code></td></tr>
+                    <tr><td><span class="numero">28</span></td><td class="o-que-muda">Cor de tooltip (title)</td><td><code class="propriedade note">Não muda facilmente (nativo)</code></td><td><code class="exemplo-css note">precisa de pseudo-elemento customizado</code></td></tr>
+                    <tr><td><span class="numero">29</span></td><td class="o-que-muda">Cor do ícone de detalhes (&lt;details&gt;)</td><td><code class="propriedade">::marker</code></td><td><code class="exemplo-css">summary::marker { color: red; }</code></td></tr>
+                    <tr><td><span class="numero">30</span></td><td class="o-que-muda">Cursor (imagem personalizada)</td><td><code class="propriedade">cursor</code></td><td><code class="exemplo-css">* { cursor: url('meu-cursor.png'), auto; }</code></td></tr>
+                    <tr><td><span class="numero">31</span></td><td class="o-que-muda">Fundo de elemento desabilitado</td><td><code class="propriedade">background-color + :disabled</code></td><td><code class="exemplo-css">input:disabled { background-color: lightgray; }</code></td></tr>
+                    <tr><td><span class="numero">32</span></td><td class="o-que-muda">Cor do texto de elemento desabilitado</td><td><code class="propriedade">color + :disabled</code></td><td><code class="exemplo-css">input:disabled { color: gray; }</code></td></tr>
+                    <tr><td><span class="numero">33</span></td><td class="o-que-muda">Cor da borda de foco de acessibilidade</td><td><code class="propriedade">outline-color</code></td><td><code class="exemplo-css">button:focus-visible { outline-color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">34</span></td><td class="o-que-muda">Cor de fundo de linha alternada (zebra)</td><td><code class="propriedade">:nth-child(even/odd)</code></td><td><code class="exemplo-css">tr:nth-child(even) { background-color: #f2f2f2; }</code></td></tr>
+                    <tr><td><span class="numero">35</span></td><td class="o-que-muda">Cor da sombra de foco</td><td><code class="propriedade">box-shadow</code></td><td><code class="exemplo-css">input:focus { box-shadow: 0 0 0 3px rgba(0,100,255,0.3); }</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+                                    </code>
+                                </pre> 
                             </div>
                             <div class="code-actions">
                                 <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
                             </div>
                         </div>
+                    `
+                },
+                'pseudo-classe': {
+                    title: 'Pseudo-classes - CSS',
+                    content: `
+                            <h3>Pseudo-classes - CSS</h3>
+                            <h4>O que são pseudo-classes</h4>
+                            <p><strong>Pseudo-classes</strong> são palavras-chave em CSS que definem um estado especial de um elemento HTML. Não são tags, não estão no HTML. Existem apenas no CSS para estilizar elementos com base em condições que não podem ser expressas apenas com seletores simples.</p>
 
-                         <h3>Cores em CSS</h3>
+                             <h4>Sintaxe de pseudo-classe</h4>
+
+                            <div class="code-block">
+                                <div class="code-body">
+                                    <pre>
+                                        <code>
+seletor:pseudo-classe {
+  propriedade: valor;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                </div>
+                            </div>
+
+                            <h4>Para que servem</h4>
+                            <ol>
+                                <p>Servem para aplicar estilos quando o elemento está num determinado estado, como:</p>
+                                
+                                <li>Rato por cima (hover)</li>
+                                <li>Elemento selecionado (checked)</li>
+                                <li>Primeiro filho de um pai (first-child)</li>
+                                <li>Campo de formulário inválido (invalid)</li>
+                                <li>Link já visitado (visited)</li>
+                            </ol>
+
+                            <p>Sem pseudo-classes, seria necessário JavaScript para muitos destes comportamentos.</p>
+
+                            <h4>Tags HTML onde se aplicam</h4>
+                            <p>As pseudo-classes aplicam-se a qualquer elemento HTML que possa estar no estado correspondente.</p>
 
                         <div class="code-block">
                             <div class="code-body">
                                 <pre>
                                     <code>
-
-
-                                    </code>
-                                </pre>
-                            </div>
-                            <div class="code-actions">
-                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+<table> <thead> <tr> <th>Pseudo-classe</th> <th>Aplica-se a</th> <th>Descrição</th> </tr> </thead> <tbody> <tr> <td>:hover</td> <td>Qualquer elemento</td> <td>Rato por cima do elemento</td> </tr> <tr> <td>:active</td> <td>Qualquer elemento</td> <td>Elemento a ser clicado</td> </tr> <tr> <td>:focus</td> <td>Elementos focáveis</td> <td>Elemento com foco (teclado/rato)</td> </tr> <tr> <td>:focus-visible</td> <td>Elementos focáveis</td> <td>Foco apenas via teclado</td> </tr> <tr> <td>:focus-within</td> <td>Elemento pai</td> <td>Quando algum filho tem foco</td> </tr> <tr> <td>:visited</td> <td>&lt;a&gt;</td> <td>Link já visitado</td> </tr> <tr> <td>:link</td> <td>&lt;a&gt;</td> <td>Link não visitado</td> </tr> <tr> <td>:any-link</td> <td>&lt;a&gt;</td> <td>Qualquer link</td> </tr> <tr> <td>:target</td> <td>Qualquer elemento</td> <td>Elemento com id igual ao hash do URL</td> </tr> <tr> <td>:checked</td> <td>&lt;input&gt; checkbox/radio, &lt;option&gt;</td> <td>Elemento selecionado</td> </tr> <tr> <td>:disabled</td> <td>&lt;input&gt;, &lt;button&gt;, &lt;select&gt;, &lt;textarea&gt;</td> <td>Elemento desativado</td> </tr> <tr> <td>:enabled</td> <td>&lt;input&gt;, &lt;button&gt;, &lt;select&gt;, &lt;textarea&gt;</td> <td>Elemento ativo</td> </tr> <tr> <td>:required</td> <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td> <td>Campo obrigatório</td> </tr> <tr> <td>:optional</td> <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td> <td>Campo opcional</td> </tr> <tr> <td>:read-only</td> <td>&lt;input&gt;, &lt;textarea&gt;</td> <td>Campo apenas de leitura</td> </tr> <tr> <td>:read-write</td> <td>&lt;input&gt;, &lt;textarea&gt;</td> <td>Campo editável</td> </tr> <tr> <td>:valid</td> <td>&lt;input&gt;, &lt;form&gt;</td> <td>Valor válido</td> </tr> <tr> <td>:invalid</td> <td>&lt;input&gt;, &lt;form&gt;</td> <td>Valor inválido</td> </tr> <tr> <td>:in-range</td> <td>&lt;input&gt;</td> <td>Valor dentro do intervalo</td> </tr> <tr> <td>:out-of-range</td> <td>&lt;input&gt;</td> <td>Valor fora do intervalo</td> </tr> <tr> <td>:placeholder-shown</td> <td>&lt;input&gt;, &lt;textarea&gt;</td> <td>Placeholder visível</td> </tr> <tr> <td>:default</td> <td>&lt;input&gt;, &lt;button&gt;, &lt;option&gt;</td> <td>Elemento padrão</td> </tr> <tr> <td>:first-child</td> <td>Qualquer elemento</td> <td>Primeiro filho do pai</td> </tr> <tr> <td>:last-child</td> <td>Qualquer elemento</td> <td>Último filho do pai</td> </tr> <tr> <td>:only-child</td> <td>Qualquer elemento</td> <td>Único filho do pai</td> </tr> <tr> <td>:first-of-type</td> <td>Qualquer elemento</td> <td>Primeiro do seu tipo</td> </tr> <tr> <td>:last-of-type</td> <td>Qualquer elemento</td> <td>Último do seu tipo</td> </tr> <tr> <td>:only-of-type</td> <td>Qualquer elemento</td> <td>Único do seu tipo</td> </tr> <tr> <td>:nth-child(n)</td> <td>Qualquer elemento</td> <td>Enésimo filho</td> </tr> <tr> <td>:nth-last-child(n)</td> <td>Qualquer elemento</td> <td>Enésimo filho a contar do fim</td> </tr> <tr> <td>:nth-of-type(n)</td> <td>Qualquer elemento</td> <td>Enésimo do seu tipo</td> </tr> <tr> <td>:nth-last-of-type(n)</td> <td>Qualquer elemento</td> <td>Enésimo do seu tipo a contar do fim</td> </tr> <tr> <td>:empty</td> <td>Qualquer elemento</td> <td>Elemento sem filhos (nem texto)</td> </tr> <tr> <td>:not(seletor)</td> <td>Qualquer elemento</td> <td>Negação</td> </tr> <tr> <td>:has(seletor)</td> <td>Qualquer elemento</td> <td>Elemento que contém determinado filho</td> </tr> <tr> <td>:is(seletor)</td> <td>Qualquer elemento</td> <td>Agrupa seletores</td> </tr> <tr> <td>:where(seletor)</td> <td>Qualquer elemento</td> <td>Agrupa com especificidade zero</td> </tr> <tr> <td>:root</td> <td>&lt;html&gt;</td> <td>Raiz do documento</td> </tr> <tr> <td>:lang(código)</td> <td>Qualquer elemento</td> <td>Elemento com idioma específico</td> </tr> <tr> <td>:playing</td> <td>&lt;audio&gt;, &lt;video&gt;</td> <td>Média em reprodução</td> </tr> <tr> <td>:paused</td> <td>&lt;audio&gt;, &lt;video&gt;</td> <td>Média pausada</td> </tr> </tbody> </table>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="code-actions">
+                            <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
                             </div>
                         </div>
-                        
-
                     `
                 },
-                'grid': {
-                    title: 'CSS Grid',
+
+                'pseudo-elementos': {
+                    title: 'Pseudo-elementos - CSS',
                     content: `
-                       
-                           
-                         
+                        <h3>Pseudo-elementos - CSS</h3>
+                        <p><strong>Pseudo-elementos</strong> são palavras-chave adicionadas a seletores que permitem estilizar partes específicas de um elemento HTML, sem precisar de adicionar mais tags no HTML.</p>
+
+                        <h4>Sintaxe de pseudo-elemento</h4>
+                        <p>No CSS3, usa-se dois pontos duplos para diferenciar de pseudo-classes:</p>
+
+                            <div class="code-block">
+                                <div class="code-body">
+                                    <pre>
+                                        <code>
+seletor::<pseudo-elemento> {
+propriedade: valor;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                </div>
+                            </div>
+
+                        <h4>Tabela de pseudo-elementos</h4>
+
+                        <div class="code-block">
+                                <div class="code-body">
+                                    <pre>
+                                        <code>
+<h4>Tabela de pseudo-elementos</h4>
+
+<table> <thead> <tr> <th>Pseudo-elemento</th> <th>Exemplo</th> <th>Descrição</th> </tr> </thead> <tbody> <tr> <td>::before</td> <td>h1::before</td> <td>Conteúdo antes do elemento</td> </tr> <tr> <td>::after</td> <td>p::after</td> <td>Conteúdo depois do elemento</td> </tr> <tr> <td>::first-letter</td> <td>p::first-letter</td> <td>Primeira letra do texto</td> </tr> <tr> <td>::first-line</td> <td>p::first-line</td> <td>Primeira linha do texto</td> </tr> <tr> <td>::selection</td> <td>::selection</td> <td>Texto selecionado pelo utilizador</td> </tr> <tr> <td>::placeholder</td> <td>input::placeholder</td> <td>Texto do placeholder</td> </tr> <tr> <td>::marker</td> <td>li::marker</td> <td>Marcador de item de lista</td> </tr> <tr> <td>::backdrop</td> <td>dialog::backdrop</td> <td>Fundo de elementos em fullscreen</td> </tr> <tr> <td>::file-selector-button</td> <td>input::file-selector-button</td> <td>Botão de upload de ficheiro</td> </tr> </tbody> </table>
+                                        </code>
+                                    </pre>
+                                </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                </div>
+                            </div>
                     `
-                }
+                },
+
+
             }
         },
         javascript: {

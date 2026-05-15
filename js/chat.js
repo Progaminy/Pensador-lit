@@ -34,7 +34,7 @@ const Chat = {
         }
 
         if (!found) {
-            this.addMessage('assistant', '📚 <strong>Base de Conhecimento</strong><br><br>Não encontrei informações sobre "' + text + '".<br><br>Tente: 🔧 HTML | 📚 CSS | 🤔 JavaScript | 💬 Outros | Brevimente');
+            this.addMessage('assistant', '📚 <strong>Base de Conhecimento</strong><br><br>Não encontrei informações sobre "' + text + '".<br><br>Tente: 🔧 HTML | 📚 CSS | 🤔 JavaScript | 💬 Outros ');
         }
     },
 

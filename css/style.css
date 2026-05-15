@@ -8,7 +8,7 @@
     --neon-red: #ff073a;
     --neon-yellow: #ffff00;
     --gradient-green: linear-gradient(135deg, #2ecc71, #27ae60);
-    
+
     /* Tema Claro (default) */
     --bg-primary: #ffffff;
     --bg-secondary: #f7f7f8;
@@ -17,9 +17,9 @@
     --text-primary: #1a1a1a;
     --text-secondary: #6b7280;
     --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -78,11 +78,27 @@ body {
     flex-shrink: 0;
 }
 
-.profile-avatar:hover { transform: scale(1.05); }
-.profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
 
-.brand { flex: 1; min-width: 0; }
-.brand h2 { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand {
+    flex: 1;
+    min-width: 0;
+}
+
+.brand h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
 .version {
     font-size: 0.75rem;
     color: var(--text-secondary);
@@ -111,12 +127,15 @@ body {
     padding: 0 5px;
 }
 
-.theme-section, .new-chat-section, .knowledge-menu {
+.theme-section,
+.new-chat-section,
+.knowledge-menu {
     padding: 15px 20px;
     border-bottom: 1px solid var(--border-color);
 }
 
-.theme-toggle-btn, .new-chat-btn {
+.theme-toggle-btn,
+.new-chat-btn {
     width: 100%;
     padding: 12px;
     border: 2px solid var(--border-color);
@@ -132,11 +151,28 @@ body {
     transition: all 0.3s;
 }
 
-.theme-toggle-btn:hover { background: var(--bg-hover); border-color: var(--yellow); }
-.new-chat-btn { border-color: var(--green); color: var(--green); font-weight: 600; }
-.new-chat-btn:hover { background: var(--green); color: white; transform: translateY(-2px); }
+.theme-toggle-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--yellow);
+}
 
-.nav-buttons { display: flex; flex-direction: column; gap: 5px; }
+.new-chat-btn {
+    border-color: var(--green);
+    color: var(--green);
+    font-weight: 600;
+}
+
+.new-chat-btn:hover {
+    background: var(--green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 .nav-item {
     display: flex;
@@ -154,12 +190,29 @@ body {
     text-align: left;
 }
 
-.nav-item:hover { background: var(--bg-hover); }
-.nav-item.html-nav:hover { border-left: 3px solid var(--red); }
-.nav-item.css-nav:hover { border-left: 3px solid var(--green); }
-.nav-item.js-nav:hover { border-left: 3px solid var(--yellow); }
-.nav-item.outros-nav:hover { border-left: 3px solid #a55eea; }
-.brev-nav:hover { border-left: 3px solid #3f37ab; }
+.nav-item:hover {
+    background: var(--bg-hover);
+}
+
+.nav-item.html-nav:hover {
+    border-left: 3px solid var(--red);
+}
+
+.nav-item.css-nav:hover {
+    border-left: 3px solid var(--green);
+}
+
+.nav-item.js-nav:hover {
+    border-left: 3px solid var(--yellow);
+}
+
+.nav-item.outros-nav:hover {
+    border-left: 3px solid #a55eea;
+}
+
+.brev-nav:hover {
+    border-left: 3px solid #3f37ab;
+}
 
 .sidebar-footer {
     padding: 15px 20px;
@@ -174,8 +227,11 @@ body {
 .sidebar-overlay {
     display: none;
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 15;
 }
 
@@ -225,11 +281,21 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
-.chat-actions { display: flex; gap: 8px; }
+.chat-actions {
+    display: flex;
+    gap: 8px;
+}
 
 .action-icon {
     padding: 8px;
@@ -241,7 +307,9 @@ body {
     transition: all 0.3s;
 }
 
-.action-icon:hover { background: var(--bg-hover); }
+.action-icon:hover {
+    background: var(--bg-hover);
+}
 
 /* Mensagens */
 .messages-container {
@@ -259,7 +327,10 @@ body {
     margin: auto;
 }
 
-.welcome-icon { font-size: 4rem; margin-bottom: 15px; }
+.welcome-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
 
 .welcome-message h2 {
     font-size: 1.8rem;
@@ -270,7 +341,10 @@ body {
     background-clip: text;
 }
 
-.welcome-message p { color: var(--text-secondary); margin-bottom: 25px; }
+.welcome-message p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
 
 .quick-actions {
     display: flex;
@@ -290,7 +364,10 @@ body {
     transition: all 0.3s;
 }
 
-.quick-btn:hover { border-color: var(--green); transform: translateY(-2px); }
+.quick-btn:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
 
 /* Mensagens do chat */
 .message {
@@ -299,12 +376,24 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.message.user { justify-content: flex-end; }
-.message.assistant { justify-content: flex-start; }
+.message.user {
+    justify-content: flex-end;
+}
+
+.message.assistant {
+    justify-content: flex-start;
+}
 
 .message-content {
     max-width: 70%;
@@ -345,7 +434,9 @@ body {
     overflow-x: auto;
 }
 
-.code-body pre { margin: 0; }
+.code-body pre {
+    margin: 0;
+}
 
 .code-body code {
     color: #d4d4d4;
@@ -376,10 +467,25 @@ body {
     font-weight: 600;
 }
 
-.copy-btn { background: var(--neon-green); color: #000; }
-.whatsapp-btn { background: #25d366; color: white; }
-.telegram-btn { background: #0088cc; color: white; }
-.sms-btn { background: #ff9800; color: white; }
+.copy-btn {
+    background: var(--neon-green);
+    color: #000;
+}
+
+.whatsapp-btn {
+    background: #25d366;
+    color: white;
+}
+
+.telegram-btn {
+    background: #0088cc;
+    color: white;
+}
+
+.sms-btn {
+    background: #ff9800;
+    color: white;
+}
 
 /* Tópicos no chat */
 .topic-options {
@@ -450,7 +556,9 @@ body {
     transition: all 0.3s;
 }
 
-.send-button:hover { transform: scale(1.05); }
+.send-button:hover {
+    transform: scale(1.05);
+}
 
 .input-footer {
     display: flex;
@@ -475,12 +583,27 @@ body {
     animation: typing 1.4s infinite;
 }
 
-.typing-animation span:nth-child(2) { animation-delay: 0.2s; }
-.typing-animation span:nth-child(3) { animation-delay: 0.4s; }
+.typing-animation span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-animation span:nth-child(3) {
+    animation-delay: 0.4s;
+}
 
 @keyframes typing {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-    30% { transform: translateY(-10px); opacity: 1; }
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
 }
 
 /* ===== TEMA ESCURO ===== */
@@ -492,9 +615,9 @@ body {
     --text-primary: #e0e0e0;
     --text-secondary: #9ca3af;
     --border-color: #2d2d5e;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
-    --shadow-lg: 0 10px 15px rgba(0,0,0,0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] body {
@@ -537,78 +660,103 @@ body {
 [data-theme="dark"] .profile-avatar {
     background: linear-gradient(135deg, #39ff14, #2ecc71);
 }
+
 h4 {
     color: white;
     background-color: #095f8a;
 }
 
 .code-actions {
-    display: flex; gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
- table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-        
-        th {
-            background: #4a5568;
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 1.1em;
-            text-align: left;
-        }
-        
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        tr:hover {
-            background: #f7fafc;
-        }
-        
-        .atributo {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: #e53e3e;
-            background: #fff5f5;
-        }
-        
-        .descricao {
-            color: #2d3748;
-        }
-        
-        .exemplo {
-            font-family: 'Courier New', monospace;
-            color: #38a169;
-            background: #f0fff4;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .badge {
-            background: #edf2f7;
-            color: #4a5568;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        
-        @media (max-width: 768px) {
-            table {
-                font-size: 14px;
-            }
-            
-            th, td {
-                padding: 8px 10px;
-            }
-            
-            h1 {
-                font-size: 1.4em;
-                padding: 15px;
-            }
-        }
+
+h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: #4a5568;
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover {
+    background: #f7fafc;
+}
+
+.seletor {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #e53e3e;
+    background: #fff5f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.html-code {
+    font-family: 'Courier New', monospace;
+    color: #3182ce;
+    background: #ebf8ff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.css-code {
+    font-family: 'Courier New', monospace;
+    color: #38a169;
+    background: #f0fff4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.descricao {
+    color: #2d3748;
+}
+
+.badge {
+    background: #edf2f7;
+    color: #4a5568;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+        padding: 15px;
+    }
+}
