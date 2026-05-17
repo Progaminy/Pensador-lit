@@ -247,8 +247,10 @@ const KnowledgeBase = {
                         <h3>link:</h3>
                         <p>link estabelece relacoa com recursos ewxtrnos</p>
                         
+
                         <h4>link de CSS externo</h4>
                         <div class="code-block">
+
                             <div class="code-body">
                                 <pre>
                                     <code>
@@ -341,7 +343,7 @@ ou
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;!-- (Conteudo) Tudo aqui é visível --&gt;
+&lt;!-- Tudo aqui é visível (Conteudo) --&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
@@ -362,13 +364,7 @@ ou
                     title: 'Boxe Model (modelo de Caixa)',
                     content: `
                         <h3>Boxe Model (Modelo de Caixa)</h3>
-
                         <p>Todo elemento HTML é uma caixa retangular, controlado por display (display: block, display: block-inline),</p>
-
-                        <h4>display: block</h4>
-                    <p>Ocupa toda a largura disponível e quebra linha antes e depois.</p>
-
-
                         <div class="code-block">
                             <div class="code-body">
                                 <pre>
@@ -376,27 +372,152 @@ ou
 <h4>display: block</h4>
 <p>Ocupa toda a largura disponível e quebra linha antes e depois.</p>
 
-<p>Exemplo:</p>
-
-&lt;h1&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;div&gt;&lt;div/&gt;
-
-<!-- Resultado: Cada um em sua linha -->
+<style>
+  .bloco {
+    display: block;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+    background: lightblue;
+  }
+</style>
 
 <h4>display: inline</h4>
 <p>Ocupa apenas o espaço do conteúdo, não quebra linha.</p>
 
+<style>
+  .inline {
+    display: inline;
+    width: 200px;     /* ❌ IGNORADO */
+    height: 100px;    /* ❌ IGNORADO */
+    padding: 20px;    /* ⚠️ Aplica mas não empurra outros elementos */
+    margin: 10px;     /* ⚠️ Apenas horizontal funciona */
+    border: 1px solid red;
+    background: lightgreen;
+  }
+</style>
+
 <span class="inline">Inline 1</span>
 <span class="inline">Inline 2</span>
 <span class="inline">Inline 3</span>
-
 <!-- Resultado: todos na mesma linha -->
 
 <h4>display: inline-block</h4>
 <p>Fica inline mas comporta-se como block</p>
 
-<span class="inline">Inline 1</span>
+<style>
+  .inline-bloco {
+    display: inline-block;
+    width: 150px;      /* ✅ FUNCIONA */
+    height: 80px;      /* ✅ FUNCIONA */
+    padding: 10px;
+    margin: 10px;      /* ✅ FUNCIONA nos 4 lados */
+    border: 2px solid blue;
+    background: lightyellow;
+  }
+</style>
+
+<h4>display: flex (Tornar a cixaa Flexivel)</h4>
+<p>O Flexbox é um modelo de layout unidimensional que permite distribuir espaços e alinhar itens de forma eficiente dentro de um container, mesmo quando os tamanhos são dinâmicos ou desconhecidos.</p>
+
+<style>
+  .container {
+    display: flex;  /* Ativa o Flexbox */
+    background: lightblue;
+    padding: 20px;
+  }
+  
+  .item {
+    background: coral;
+    padding: 20px;
+    margin: 10px;
+    color: white;
+  }
+</style>
+
+<div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+
+<h4>flex-direction - Direção dos itens</h4>
+.container {
+  display: flex;
+  flex-direction: row;        /* Padrão: linha horizontal (→) */
+  flex-direction: row-reverse; /* Linha reversa (←) */
+  flex-direction: column;      /* Coluna vertical (↓) */
+  flex-direction: column-reverse; /* Coluna reversa (↑) */
+}
+
+<h4>justify-content - Alinhamento horizontal (eixo principal)</h4>
+.container {
+  display: flex;
+  justify-content: flex-start;   /* Início (padrão) */
+  justify-content: flex-end;     /* Final */
+  justify-content: center;       /* Centro */
+  justify-content: space-between; /* Espaço entre itens */
+  justify-content: space-around;  /* Espaço ao redor */
+  justify-content: space-evenly;  /* Espaço igual */
+}
+
+<h4>align-items - Alinhamento vertical (eixo cruzado)</h4>
+.container {
+  display: flex;
+  height: 300px;  /* Precisa de altura para ver efeito */
+  align-items: stretch;    /* Estica (padrão) */
+  align-items: flex-start; /* Topo */
+  align-items: flex-end;   /* Base */
+  align-items: center;     /* Centro */
+  align-items: baseline;   /* Alinha pelo texto */
+}
+
+<h4>flex-wrap - Quebra de linha</h4>
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;       /* Não quebra (padrão) */
+  flex-wrap: wrap;         /* Quebra linha */
+  flex-wrap: wrap-reverse; /* Quebra reversa */
+}
+
+<h4>align-content - Alinhamento de múltiplas linhas</h4>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  align-content: flex-start;    /* Topo */
+  align-content: flex-end;      /* Base */
+  align-content: center;        /* Centro */
+  align-content: space-between; /* Espaço entre linhas */
+  align-content: space-around;  /* Espaço ao redor */
+}
+
+<h4>flex-shrink - Fator de encolhimento</h4>
+.item1 { flex-shrink: 1; } /* Pode encolher (padrão) */
+.item2 { flex-shrink: 0; } /* NÃO encolhe */
+
+<h4>flex-basis - Tamanho base</h4>
+.item1 { flex-basis: 200px; } /* Tamanho inicial */
+.item2 { flex-basis: auto; }   /* Baseado no conteúdo */
+
+<h4>flex - Atalho (grow shrink basis)</h4>
+/* Atalho mais comum */
+.item {
+  flex: 1;           /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+  flex: 0 1 auto;    /* Padrão */
+  flex: 1 0 200px;   /* Pode crescer, não encolhe, base 200px */
+}
+
+<h4>align-self - Alinhamento individual</h4>
+.item1 { align-self: flex-start; }
+.item2 { align-self: center; }
+.item3 { align-self: flex-end; }
+
+
+
                                     </code>
                                 </pre>
                             </div>
@@ -421,10 +542,9 @@ ou
 
 
                 'tags-html': {
-                    title: 'Tags - HTML',
+                    title: 'Tags em HTML',
                     content: `
                         <h3>Tags em HTML</h3>
-
                         <p>Tags são os elementos fundamentais do HTML. Elas definem a estrutura e o conteúdo de uma página web.</p>
                         <p>As Tags que tem conteuo interno abri e fecha, as que nao tem conteudo onterno nao fecha:</p>
                         
@@ -465,7 +585,7 @@ ou
                         </div>
 
                          <h4>TAg de Atributo:<h4/>
-                         <p>Tags de atributo sao aqueis que podem fornecer informações (links, imagens, videos)</p>
+                         <p>Tags de atributo sao aqueis que podem fornecer informações adicionais</p>
 
 
                         <div class="code-block">
@@ -697,6 +817,7 @@ ou
                         <p>Colocar textos pre-formatado (manter como foi escrito):</p>
 
                         <div class="code-block">
+
                             <div class="code-body">
                                 <pre>
                                     <code>
@@ -775,19 +896,13 @@ pre-formatdo
                                  <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
-                        `
-                },
-
-                'listas': {
-
-                    'title': 'Listas',
-                    'content': `
 
                         <h4>Listas:</h4>
 
                         <p><strong>&lt;ul&gt;</strong> Listas nao ordenais (nao inumeradas):</p>
 
                         <div class="code-block">
+
                             <div class="code-body">
                                 <pre>
                                     <code>
@@ -921,17 +1036,13 @@ pre-formatdo
                             </div>
                             <p>A numeracao sera automatica.</p>
                         </div>
-                    `
-                },
 
-                'Links': {
-                    'title': 'Links',
-                    'content': `
                             <h3>Links e mídia</h3>
 
                             <p><strong>a (âncora)</strong> serve para criar links que permitem a navegação entre páginas, seções ou recursos, seja no próprio site ou em sites externos.</p>
 
                             <div class="code-block">
+
                                 <div class="code-body">
                                     <pre>
                                         <code>
@@ -964,48 +1075,43 @@ pre-formatdo
                                  <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
                             </div>
                         </div>
-                        `
-                },
-
-                'imagem': {
-                    'title': 'Imagem',
-                    'content': `
 
                         <h3>Imagem</h3>
 
-                        <p><strong>src</strong> serve para colocar caminho da imagem que tabem pode sr um link duma imagem</p>
-
+                            <p><strong>a (âncora)</strong> serve para criar links que permitem a navegação entre páginas, seções ou recursos, seja no próprio site ou em sites externos.</p>
 
                             <div class="code-block">
+
                                 <div class="code-body">
                                     <pre>
                                         <code>
-<p class="comentario">&lt;!--Forma simples de inserir umagem numa pagina--&gt;</p>
-&lt;picture&gt;
-    &lt;img src="caminho/para/imagem.png" alt="Descrição da imagem"&gt;
-    &lt;img src="caminho/para/imagem.jpg" alt="Descrição da imagem"&gt;
-&lt;/picturegt;
+<h4>Link para site externo</h4>
 
-<p class="comentario>&lt;!--Imagem Responssivo--&gt;</p>
+<picture>
+    <img src="caminho/para/imagem.png" alt="Descrição da imagem">
+    <img src="caminho/para/imagem.jpg" alt="Descrição da imagem">
+</picture>
 
-&lt;picture&gt;
-  &lt;!-- Mobile: imagem pequena --&gt;
-  &lt;source 
+<h4>Imagem Responssivo</h4>
+
+<<picture>
+  <!-- Mobile: imagem pequena -->
+  <source 
     media="(max-width: 768px)" 
-    srcset="imagem-pequena.jpg"&gt;
+    srcset="imagem-pequena.jpg">
   
-  &lt;!-- Tablet: imagem média --&gt;
-  &lt;source 
+  <!-- Tablet: imagem média -->
+  <source 
     media="(max-width: 1024px)" 
-    srcset="imagem-media.jpg"&gt;
+    srcset="imagem-media.jpg">
   
-  <p class="comentario>&lt;!-- Desktop: imagem grande --&gt;</p>
-  &lt;img src="imagem-grande.jpg" alt="Imagem responsiva"&gt;
-&lt;/picture&gt;
+  <!-- Desktop: imagem grande -->
+  <img src="imagem-grande.jpg" alt="Imagem responsiva">
+</picture>
 
-&lt;!--Srcset (para resoluções diferentes)--&gt;
-&lt;!-- Carrega imagem conforme resolução da tela--&gt;
-&lt;img 
+<h4>Srcset (para resoluções diferentes)</h4>
+<!-- Carrega imagem conforme resolução da tela -->
+<img 
   src="imagem-pequena.jpg"
   srcset="
     imagem-pequena.jpg 480w,
@@ -1016,24 +1122,26 @@ pre-formatdo
          (max-width: 900px) 768px,
          1200px"
   alt="Imagem responsiva"
-&gt;
+>
 
-&lt;!--Baixar imagem--&gt;
-&lt;!-- Funciona apenas para imagens do mesmo domínio --&gt;
-&lt;a href="imagem.jpg" download="meu-arquivo.jpg"&gt;
+<h4>Baixar imagem</h4>
+<!-- Funciona apenas para imagens do mesmo domínio -->
+<a href="imagem.jpg" download="meu-arquivo.jpg">
   Baixar Imagem
-&lt;/a&gt;
+</a>
 
-&lt;!-- Com nome personalizado --&gt;
-&lt;a href="foto.png" download="minha-foto.png"&gt;
+<!-- Com nome personalizado -->
+<a href="foto.png" download="minha-foto.png">
   Clique para baixar
-&lt;/a&gt;
-&lt;p&gt;
+</a>
+<p>
     ✅ Funciona no mesmo domínio
     ❌ Não funciona para imagens de outros sites (cross-origin)
     ❌ Navegadores antigos ignoram
     ⚠️ Alguns navegadores abrem a imagem em vez de baixar
-&lt;/p&gt;
+</p>
+
+
                                       </code>
                                     </pre>
                                 </div>
@@ -1044,125 +1152,122 @@ pre-formatdo
                             </div>
                             <p>Recomendacao: melhor colocar 10px de menor em relacao a imagem</p>
                         </div>
-                        `
-                },
 
-
-
-                    'Videos': {
-                        title: 'Videos',
-                        'content': `
-
-                            <h3>Video</h3>
+                        <h3>Video</h3>
 
                         <div class="code-block">
 
                             <div class="code-body">
                                 <pre>
                                     <code>
-&lt;h4&gt;Inserir Vdeio de forma Simples&lt;/h4&gt;
-&lt;video src="video.mp4" controlsgt;&lt;/video&gt;
+<h4>Inserir Vdeio de forma Simples</h4>
+<video src="video.mp4" controls></video>
 
-&lt;h4gt;Inserir com unico formato - forma completa&lt;/h4&gt;
-&lt;video 
+<h4>Inserir com unico formato - forma completa</h4>
+<video 
   src="meu-video.mp4" 
   width="640" 
   height="360" 
   controls
-&gt;
+>
   Seu navegador não suporta a tag de vídeo.
-&lt;/video&gt;
+</video>
 
-&lt;h4>Vídeo simples com controles&lt;/h4&gt;
-&lt;video width="800" height="450" controls&gt;
-  &lt;source src="video.mp4" type="video/mp4"gt;
+<h4>Vídeo simples com controles</h4>
+<video width="800" height="450" controls>
+  <source src="video.mp4" type="video/mp4">
   Seu navegador não suporta vídeo.
-&lt;/video&gt;
+</video>
 
-&lt;h4>Múltiplos formatos (fallback)&lt;/h4&gt;
-&lt;video controls width="640" height="360"&gt;
-  &lt;source src="video.mp4" type="video/mp4"&gt;
-  &lt;source src="video.webm" type="video/webm"&gt;
-  &lt;source src="video.ogv" type="video/ogg"&gt;
-  &lt;p>Seu navegador não suporta HTML5 video.&lt;/p&gt;
-&lt;/video>&gt;
-&lt;h4&gt;Vídeo com autoplay (precisa muted)&lt;/h4&gt;
-&lt;video 
+<h4>Múltiplos formatos (fallback)</h4>
+<video controls width="640" height="360">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <source src="video.ogv" type="video/ogg">
+  <p>Seu navegador não suporta HTML5 video.</p>
+</video>
+
+<h4>Vídeo com autoplay (precisa muted)</h4>
+<video 
   src="background.mp4" 
   autoplay 
   muted 
   loop 
   playsinline
   poster="thumbnail.jpg"
-&gt;
-&lt;/video&gt;
+>
+</video>
 
- &lt;h4gt;Vídeo com imagem de capa (poster)&lt;/h4&gt;
- &lt;video 
+ <h4>Vídeo com imagem de capa (poster)</h4>
+ <video 
   controls 
   poster="capa-do-video.jpg" 
   width="640" 
   height="360"
-&gt;
-  &lt;source src="video.mp4" type="video/mp4"&gt;
-&lt;/video&gt;
+>
+  <source src="video.mp4" type="video/mp4">
+</video>
 
-&lt;h4>Atributos avançados:</h4gt;
-&lt;!-- Vídeo com legendas --&gt;
-&lt;video controls width="640"&gt;
-  &lt;source src="video.mp4" type="video/mp4"&gt;
+<h4>Atributos avançados:</h4>
+<!-- Vídeo com legendas -->
+<video controls width="640">
+  <source src="video.mp4" type="video/mp4">
   
-  &lt;!-- Legendas --&gt;
-  &lt;track 
+  <!-- Legendas -->
+  <track 
     src="legendas-pt.vtt" 
     kind="subtitles" 
     srclang="pt" 
     label="Português"
-  &gt;
-  &lt;track 
+  >
+  <track 
     src="legendas-en.vtt" 
     kind="subtitles" 
     srclang="en" 
     label="English"
   >
-&lt;/video&gt;
+</video>
 
-&lt;!-- Vídeo com faixas descritivas --&gt;
-&lt;video controls&gt;
-  <source src="video.mp4"&gt;
-  <track kind="descriptions" src="descricao.vtt"&gt;
-&lt;/video&gt;
+<!-- Vídeo com faixas descritivas -->
+<video controls>
+  <source src="video.mp4">
+  <track kind="descriptions" src="descricao.vtt">
+</video>
 
-&lt;h4&gt;Incorporar vídeos externos (YouTube, Vimeo)&lt;/h4&gt;
-&lt;!-- YouTube --&gt;
-&lt;iframe 
+<h4>Incorporar vídeos externos (YouTube, Vimeo)</h4>
+<!-- YouTube -->
+<iframe 
   width="560" 
   height="315" 
   src="https://www.youtube.com/embed/VIDEO_ID" 
   frameborder="0" 
   allowfullscreen
-&gt;
-&lt;/iframe&gt;
+>
+</iframe>
 
-&lt;!-- Vimeo --&gt;
-&lt;iframe 
+<!-- Vimeo -->
+<iframe 
   src="https://player.vimeo.com/video/VIDEO_ID" 
   width="640" 
   height="360" 
   frameborder="0" 
   allowfullscreen
 >
-&lt;/iframe&gt;
+</iframe>
 
-&lt;video src="caminho/do/video" type="video/mp4" poster="images/caminho/da/imagem" controls preload="metadata" width="400"&gt;&lt;/video&gt;
+<video src="caminho/do/video" type="video/mp4" poster="images/caminho/da/imagem" controls preload="metadata" width="400"></video>
 
-&lt;h4&gt;inserir video de forma mais completa&lt;/h4&gt;
-&lt;video controls preload="metadata"&gt;
-    &lt;source src="videos/video.mp4" type="video/mp4"&gt;
-    &lt;source src="videos/video.webm" type="video/webm"&gt;
-    &lt;source src="videos/video.ogv" type="video/ogg"&gt;
-&lt;/video&gt;
-&lt;p&gt;Seu navegador incompativel par vídeo.&lt;/p&gt;
+<h4>inserir video de forma mais completa</h4>
+<video controls preload="metadata">
+    <source src="videos/video.mp4" type="video/mp4">
+    <source src="videos/video.webm" type="video/webm">
+    <source src="videos/video.ogv" type="video/ogg">
+</video>
+<p>Seu navegador incompativel par vídeo.</p>
+
+
+
+
                                     </code>
                                 </pre>
                             </div>
@@ -1251,11 +1356,6 @@ pre-formatdo
                             </div>
                             
                         </div>
-                        `
-                    },
-                    'audio': {
-                        'title': 'Audio',
-                        'content': `
 
                         <h3>Audio</h3>
 
@@ -1264,46 +1364,45 @@ pre-formatdo
                             <div class="code-body">
                                 <pre>
                                     <code>
-<p class="comentario">&lt;!-- Exemplo mais simples --&gt;</p>
-&lt;audio src="musica.mp3" controls&lt;/audio&gt;
+<!-- Exemplo mais simples -->
+<audio src="musica.mp3" controls></audio>
 
-&lt;h4&gt;Estrutura básica completa:&lt;/h4&gt;
-&lt;audio 
+<h4>Estrutura básica completa:</h4>
+<audio 
   src="minha-musica.mp3" 
   controls
   autoplay
-&gt;
+>
   Seu navegador não suporta a tag de áudio.
-&lt;/audio&gt;
+</audio>
 
-&lt;h4&gt;Áudio simples com controles&lt;/h4&gt;
-&lt;audio controls&gt;
-  &lt;source src="musica.mp3" type="audio/mpeg"&gt;
+<h4>Áudio simples com controles</h4>
+<audio controls>
+  <source src="musica.mp3" type="audio/mpeg">
   Seu navegador não suporta áudio.
-&lt;/audio&gt;
+</audio>
 
-&lt;!--Múltiplos formatos (fallback)&lt;/h4--&gt;
-&lt;!-- Autoplay só funciona com muted ou após interação --&gt;
-<&lt;!-- Navegadores modernos bloqueiam autoplay com som --&gt;
+<h4>Múltiplos formatos (fallback)</h4>
+<!-- Autoplay só funciona com muted ou após interação -->
+<audio src="background.mp3" autoplay muted loop>
+  <!-- Navegadores modernos bloqueiam autoplay com som -->
+</audio>
 
+<!-- Corrigir: precisa de interação do usuário -->
+<button onclick="tocarAudio()">Tocar música</button>
+<audio id="meuAudio" src="musica.mp3"></audio>
 
-&lt;/audio&gt;
-
-&lt;!-- Corrigir: precisa de interação do usuário --&gt;
-&lt;button onclick="tocarAudio()"&lt;Tocar música&lt;/button&gt;
-&lt;audio id="meuAudio" src="musica.mp3">&lt;/audio&gt;
-
-&lt;script&gt;
+<script>
 function tocarAudio() {
   const audio = document.getElementById('meuAudio');
   audio.play();
 }
-&lt;/script&gt;
+</script>
 
-&lt;h4&gt;Áudio com loop (repetir)&lt;/h4&gt;
-&lt;audio controls loop&gt;
-  &lt;source src="efeito-sonoro.mp3" type="audio/mpeg"&gt;
-&lt;/audio&gt;
+<h4>Áudio com loop (repetir)</h4>
+<audio controls loop>
+  <source src="efeito-sonoro.mp3" type="audio/mpeg">
+</audio>
 
                                     </code>
                                 </pre>
@@ -1453,68 +1552,68 @@ p {
                             <div class="code-body">
                                 <pre>
                                     <code>
-<h4>📌 5 maneiras diferentes de aplicar cores</h4>
-<table>
-    <thead>
-        <tr>
-            <th>Tipo</th>
-            <th>Exemplo</th>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><span class="tipo">Nome</span></td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <div class="color-preview" style="background: tomato;"></div>
-                    <code class="exemplo-cor">red, blue, tomato</code>
-                </div>
-            </td>
-            <td class="descricao">140+ nomes pré-definidos</td>
-        </tr>
-        <tr>
-            <td><span class="tipo">Hex</span></td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <div class="color-preview" style="background: #FF0000;"></div>
-                    <code class="exemplo-cor">#FF0000</code>
-                </div>
-            </td>
-            <td class="descricao">6 dígitos (RRGGBB)</td>
-        </tr>
-        <tr>
-            <td><span class="tipo">RGB</span></td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <div class="color-preview" style="background: rgb(255, 0, 0);"></div>
-                    <code class="exemplo-cor">rgb(255, 0, 0)</code>
-                </div>
-            </td>
-            <td class="descricao">0–255 cada canal</td>
-        </tr>
-        <tr>
-            <td><span class="tipo">RGBA</span></td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <div class="color-preview" style="background: rgba(255, 0, 0, 0.5);"></div>
-                    <code class="exemplo-cor">rgba(255,0,0,0.5)</code>
-                </div>
-            </td>
-            <td class="descricao">Com transparência</td>
-        </tr>
-        <tr>
-            <td><span class="tipo">HSL</span></td>
-            <td>
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <div class="color-preview" style="background: hsl(0, 100%, 50%);"></div>
-                    <code class="exemplo-cor">hsl(0, 100%, 50%)</code>
-                </div>
-            </td>
-            <td class="descricao">Matiz, Saturação, Luminosidade</td>
-        </tr>
-    </tbody>
-</table>
+        <h4>📌 5 maneiras diferentes de aplicar cores</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Exemplo</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="tipo">Nome</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: tomato;"></div>
+                            <code class="exemplo-cor">red, blue, tomato</code>
+                        </div>
+                    </td>
+                    <td class="descricao">140+ nomes pré-definidos</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">Hex</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: #FF0000;"></div>
+                            <code class="exemplo-cor">#FF0000</code>
+                        </div>
+                    </td>
+                    <td class="descricao">6 dígitos (RRGGBB)</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">RGB</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: rgb(255, 0, 0);"></div>
+                            <code class="exemplo-cor">rgb(255, 0, 0)</code>
+                        </div>
+                    </td>
+                    <td class="descricao">0–255 cada canal</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">RGBA</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: rgba(255, 0, 0, 0.5);"></div>
+                            <code class="exemplo-cor">rgba(255,0,0,0.5)</code>
+                        </div>
+                    </td>
+                    <td class="descricao">Com transparência</td>
+                </tr>
+                <tr>
+                    <td><span class="tipo">HSL</span></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <div class="color-preview" style="background: hsl(0, 100%, 50%);"></div>
+                            <code class="exemplo-cor">hsl(0, 100%, 50%)</code>
+                        </div>
+                    </td>
+                    <td class="descricao">Matiz, Saturação, Luminosidade</td>
+                </tr>
+            </tbody>
+        </table>
 
                                     </code>
                                 </pre>
@@ -1530,43 +1629,44 @@ p {
                             <div class="code-body">
                                 <pre>
                                     <code>
-<h4>📐 Unidades absolutas e relativas</h4>
-<table>
-    <thead>
-        <tr>
-            <th>Unidade</th>
-            <th>Tipo</th>
-            <th>Exemplo de uso</th>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><span class="unidade">px</span></td>
-            <td><span class="tipo absoluta">Absoluta</span></td>
-            <td><code class="exemplo">font-size: 16px;</code></td>
-            <td class="descricao">Pixel - unidade fixa para tela</td>
-        </tr>
-        <tr>
-            <td><span class="unidade">%</span></td>
-            <td><span class="tipo relativa">Relativa</span></td>
-            <td><code class="exemplo">width: 50%;</code></td>
-            <td class="descricao">Relativa ao elemento pai</td>
-        </tr>
-        <tr>
-            <td><span class="unidade">em</span></td>
-            <td><span class="tipo relativa">Relativa</span></td>
-            <td><code class="exemplo">margin: 2em;</code></td>
-            <td class="descricao">Relativa ao font-size do elemento</td>
-        </tr>
-        <tr>
-            <td><span class="unidade">rem</span></td>
-            <td><span class="tipo relativa">Relativa</span></td>
-            <td><code class="exemplo">padding: 1rem;</code></td>
-            <td class="descricao">Relativa ao font-size do &lt;html&gt; (root)</td>
-        </tr>
-    </tbody>
-</table>
+        <h4>📐 Unidades absolutas e relativas</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Unidade</th>
+                    <th>Tipo</th>
+                    <th>Exemplo de uso</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="unidade">px</span></td>
+                    <td><span class="tipo absoluta">Absoluta</span></td>
+                    <td><code class="exemplo">font-size: 16px;</code></td>
+                    <td class="descricao">Pixel - unidade fixa para tela</td>
+                </tr>
+                <tr>
+                    <td><span class="unidade">%</span></td>
+                    <td><span class="tipo relativa">Relativa</span></td>
+                    <td><code class="exemplo">width: 50%;</code></td>
+                    <td class="descricao">Relativa ao elemento pai</td>
+                </tr>
+                <tr>
+                    <td><span class="unidade">em</span></td>
+                    <td><span class="tipo relativa">Relativa</span></td>
+                    <td><code class="exemplo">margin: 2em;</code></td>
+                    <td class="descricao">Relativa ao font-size do elemento</td>
+                </tr>
+                <tr>
+                    <td><span class="unidade">rem</span></td>
+                    <td><span class="tipo relativa">Relativa</span></td>
+                    <td><code class="exemplo">padding: 1rem;</code></td>
+                    <td class="descricao">Relativa ao font-size do &lt;html&gt; (root)</td>
+                </tr>
+            </tbody>
+        </table>
+
                                     </code>
                                 </pre>
                             </div>
@@ -1586,54 +1686,54 @@ p {
                             <div class="code-body">
                                 <pre>
                                     <code>
-<div class="subtitle">🎨 Versão Expansiva - 35 formas de aplicar cores</div>
-<table>
-    <thead>
-        <tr>
-            <th style="width: 5%;">#</th>
-            <th style="width: 35%;">O que muda de cor</th>
-            <th style="width: 30%;">Propriedade / Seletor</th>
-            <th style="width: 30%;">Exemplo CSS</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><span class="numero">1</span></td><td class="o-que-muda">Texto comum</td><td><code class="propriedade">color</code></td><td><code class="exemplo-css">p { color: blue; }</code></td></tr>
-        <tr><td><span class="numero">2</span></td><td class="o-que-muda">Fundo do elemento</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">div { background-color: yellow; }</code></td></tr>
-        <tr><td><span class="numero">3</span></td><td class="o-que-muda">Borda completa</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">img { border: 2px solid red; }</code></td></tr>
-        <tr><td><span class="numero">4</span></td><td class="o-que-muda">Apenas uma borda</td><td><code class="propriedade">border-top-color</code></td><td><code class="exemplo-css">h1 { border-top-color: green; }</code></td></tr>
-        <tr><td><span class="numero">5</span></td><td class="o-que-muda">Sombra da caixa (box)</td><td><code class="propriedade">box-shadow <span class="badge">inclui cor</span></code></td><td><code class="exemplo-css">div { box-shadow: 0 0 10px rgba(0,0,0,0.5); }</code></td></tr>
-        <tr><td><span class="numero">6</span></td><td class="o-que-muda">Sombra do texto</td><td><code class="propriedade">text-shadow <span class="badge">inclui cor</span></code></td><td><code class="exemplo-css">h1 { text-shadow: 2px 2px 4px gray; }</code></td></tr>
-        <tr><td><span class="numero">7</span></td><td class="o-que-muda">Sublinhado / linha decorativa</td><td><code class="propriedade">text-decoration-color</code></td><td><code class="exemplo-css">a { text-decoration: underline; text-decoration-color: red; }</code></td></tr>
-        <tr><td><span class="numero">8</span></td><td class="o-que-muda">Marcador de lista (•, 1., etc)</td><td><code class="propriedade">::marker</code></td><td><code class="exemplo-css">li::marker { color: orange; }</code></td></tr>
-        <tr><td><span class="numero">9</span></td><td class="o-que-muda">Placeholder de input</td><td><code class="propriedade">::placeholder</code></td><td><code class="exemplo-css">input::placeholder { color: gray; }</code></td></tr>
-        <tr><td><span class="numero">10</span></td><td class="o-que-muda">Texto selecionado</td><td><code class="propriedade">::selection</code></td><td><code class="exemplo-css">p::selection { background: black; color: lime; }</code></td></tr>
-        <tr><td><span class="numero">11</span></td><td class="o-que-muda">Link não visitado</td><td><code class="propriedade">a:link</code></td><td><code class="exemplo-css">a:link { color: blue; }</code></td></tr>
-        <tr><td><span class="numero">12</span></td><td class="o-que-muda">Link já visitado</td><td><code class="propriedade">a:visited</code></td><td><code class="exemplo-css">a:visited { color: purple; }</code></td></tr>
-        <tr><td><span class="numero">13</span></td><td class="o-que-muda">Link com mouse em cima</td><td><code class="propriedade">a:hover</code></td><td><code class="exemplo-css">a:hover { color: gold; }</code></td></tr>
-        <tr><td><span class="numero">14</span></td><td class="o-que-muda">Link no momento do clique</td><td><code class="propriedade">a:active</code></td><td><code class="exemplo-css">a:active { color: red; }</code></td></tr>
-        <tr><td><span class="numero">15</span></td><td class="o-que-muda">Fundo da barra de rolagem</td><td><code class="propriedade">::-webkit-scrollbar-track</code></td><td><code class="exemplo-css">::-webkit-scrollbar-track { background: #f1f1f1; }</code></td></tr>
-        <tr><td><span class="numero">16</span></td><td class="o-que-muda">Polegar da barra de rolagem</td><td><code class="propriedade">::-webkit-scrollbar-thumb</code></td><td><code class="exemplo-css">::-webkit-scrollbar-thumb { background: #888; }</code></td></tr>
-        <tr><td><span class="numero">17</span></td><td class="o-que-muda">Bolinha do slider (range)</td><td><code class="propriedade">::-webkit-slider-thumb</code></td><td><code class="exemplo-css">input[type="range"]::-webkit-slider-thumb { background: red; }</code></td></tr>
-        <tr><td><span class="numero">18</span></td><td class="o-que-muda">Trilha do slider</td><td><code class="propriedade">::-webkit-slider-runnable-track</code></td><td><code class="exemplo-css">input[type="range"]::-webkit-slider-runnable-track { background: blue; }</code></td></tr>
-        <tr><td><span class="numero">19</span></td><td class="o-que-muda">Checkbox/radio nativo</td><td><code class="propriedade">accent-color</code></td><td><code class="exemplo-css">input[type="checkbox"] { accent-color: green; }</code></td></tr>
-        <tr><td><span class="numero">20</span></td><td class="o-que-muda">Linha &lt;hr&gt;</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">hr { border-color: magenta; }</code></td></tr>
-        <tr><td><span class="numero">21</span></td><td class="o-que-muda">Cor de fundo do &lt;body&gt;</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">body { background-color: #f0f0f0; }</code></td></tr>
-        <tr><td><span class="numero">22</span></td><td class="o-que-muda">Cor de fundo de tabela</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">td { background-color: lightblue; }</code></td></tr>
-        <tr><td><span class="numero">23</span></td><td class="o-que-muda">Cor da borda de tabela</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">table, th, td { border-color: navy; }</code></td></tr>
-        <tr><td><span class="numero">24</span></td><td class="o-que-muda">Cor do foco no campo (focus)</td><td><code class="propriedade">outline-color</code></td><td><code class="exemplo-css">input:focus { outline-color: blue; }</code></td></tr>
-        <tr><td><span class="numero">25</span></td><td class="o-que-muda">Cor do campo inválido</td><td><code class="propriedade">border-color + :invalid</code></td><td><code class="exemplo-css">input:invalid { border-color: red; }</code></td></tr>
-        <tr><td><span class="numero">26</span></td><td class="o-que-muda">Cor do campo válido</td><td><code class="propriedade">border-color + :valid</code></td><td><code class="exemplo-css">input:valid { border-color: green; }</code></td></tr>
-        <tr><td><span class="numero">27</span></td><td class="o-que-muda">Cor de itens de menu suspenso</td><td><code class="propriedade">background-color / color</code></td><td><code class="exemplo-css">select option { background-color: beige; }</code></td></tr>
-        <tr><td><span class="numero">28</span></td><td class="o-que-muda">Cor de tooltip (title)</td><td><code class="propriedade note">Não muda facilmente (nativo)</code></td><td><code class="exemplo-css note">precisa de pseudo-elemento customizado</code></td></tr>
-        <tr><td><span class="numero">29</span></td><td class="o-que-muda">Cor do ícone de detalhes (&lt;details&gt;)</td><td><code class="propriedade">::marker</code></td><td><code class="exemplo-css">summary::marker { color: red; }</code></td></tr>
-        <tr><td><span class="numero">30</span></td><td class="o-que-muda">Cursor (imagem personalizada)</td><td><code class="propriedade">cursor</code></td><td><code class="exemplo-css">* { cursor: url('meu-cursor.png'), auto; }</code></td></tr>
-        <tr><td><span class="numero">31</span></td><td class="o-que-muda">Fundo de elemento desabilitado</td><td><code class="propriedade">background-color + :disabled</code></td><td><code class="exemplo-css">input:disabled { background-color: lightgray; }</code></td></tr>
-        <tr><td><span class="numero">32</span></td><td class="o-que-muda">Cor do texto de elemento desabilitado</td><td><code class="propriedade">color + :disabled</code></td><td><code class="exemplo-css">input:disabled { color: gray; }</code></td></tr>
-        <tr><td><span class="numero">33</span></td><td class="o-que-muda">Cor da borda de foco de acessibilidade</td><td><code class="propriedade">outline-color</code></td><td><code class="exemplo-css">button:focus-visible { outline-color: blue; }</code></td></tr>
-        <tr><td><span class="numero">34</span></td><td class="o-que-muda">Cor de fundo de linha alternada (zebra)</td><td><code class="propriedade">:nth-child(even/odd)</code></td><td><code class="exemplo-css">tr:nth-child(even) { background-color: #f2f2f2; }</code></td></tr>
-        <tr><td><span class="numero">35</span></td><td class="o-que-muda">Cor da sombra de foco</td><td><code class="propriedade">box-shadow</code></td><td><code class="exemplo-css">input:focus { box-shadow: 0 0 0 3px rgba(0,100,255,0.3); }</code></td></tr>
-    </tbody>
-</table>
+        <div class="subtitle">🎨 Versão Expansiva - 35 formas de aplicar cores</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">#</th>
+                        <th style="width: 35%;">O que muda de cor</th>
+                        <th style="width: 30%;">Propriedade / Seletor</th>
+                        <th style="width: 30%;">Exemplo CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="numero">1</span></td><td class="o-que-muda">Texto comum</td><td><code class="propriedade">color</code></td><td><code class="exemplo-css">p { color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">2</span></td><td class="o-que-muda">Fundo do elemento</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">div { background-color: yellow; }</code></td></tr>
+                    <tr><td><span class="numero">3</span></td><td class="o-que-muda">Borda completa</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">img { border: 2px solid red; }</code></td></tr>
+                    <tr><td><span class="numero">4</span></td><td class="o-que-muda">Apenas uma borda</td><td><code class="propriedade">border-top-color</code></td><td><code class="exemplo-css">h1 { border-top-color: green; }</code></td></tr>
+                    <tr><td><span class="numero">5</span></td><td class="o-que-muda">Sombra da caixa (box)</td><td><code class="propriedade">box-shadow <span class="badge">inclui cor</span></code></td><td><code class="exemplo-css">div { box-shadow: 0 0 10px rgba(0,0,0,0.5); }</code></td></tr>
+                    <tr><td><span class="numero">6</span></td><td class="o-que-muda">Sombra do texto</td><td><code class="propriedade">text-shadow <span class="badge">inclui cor</span></code></td><td><code class="exemplo-css">h1 { text-shadow: 2px 2px 4px gray; }</code></td></tr>
+                    <tr><td><span class="numero">7</span></td><td class="o-que-muda">Sublinhado / linha decorativa</td><td><code class="propriedade">text-decoration-color</code></td><td><code class="exemplo-css">a { text-decoration: underline; text-decoration-color: red; }</code></td></tr>
+                    <tr><td><span class="numero">8</span></td><td class="o-que-muda">Marcador de lista (•, 1., etc)</td><td><code class="propriedade">::marker</code></td><td><code class="exemplo-css">li::marker { color: orange; }</code></td></tr>
+                    <tr><td><span class="numero">9</span></td><td class="o-que-muda">Placeholder de input</td><td><code class="propriedade">::placeholder</code></td><td><code class="exemplo-css">input::placeholder { color: gray; }</code></td></tr>
+                    <tr><td><span class="numero">10</span></td><td class="o-que-muda">Texto selecionado</td><td><code class="propriedade">::selection</code></td><td><code class="exemplo-css">p::selection { background: black; color: lime; }</code></td></tr>
+                    <tr><td><span class="numero">11</span></td><td class="o-que-muda">Link não visitado</td><td><code class="propriedade">a:link</code></td><td><code class="exemplo-css">a:link { color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">12</span></td><td class="o-que-muda">Link já visitado</td><td><code class="propriedade">a:visited</code></td><td><code class="exemplo-css">a:visited { color: purple; }</code></td></tr>
+                    <tr><td><span class="numero">13</span></td><td class="o-que-muda">Link com mouse em cima</td><td><code class="propriedade">a:hover</code></td><td><code class="exemplo-css">a:hover { color: gold; }</code></td></tr>
+                    <tr><td><span class="numero">14</span></td><td class="o-que-muda">Link no momento do clique</td><td><code class="propriedade">a:active</code></td><td><code class="exemplo-css">a:active { color: red; }</code></td></tr>
+                    <tr><td><span class="numero">15</span></td><td class="o-que-muda">Fundo da barra de rolagem</td><td><code class="propriedade">::-webkit-scrollbar-track</code></td><td><code class="exemplo-css">::-webkit-scrollbar-track { background: #f1f1f1; }</code></td></tr>
+                    <tr><td><span class="numero">16</span></td><td class="o-que-muda">Polegar da barra de rolagem</td><td><code class="propriedade">::-webkit-scrollbar-thumb</code></td><td><code class="exemplo-css">::-webkit-scrollbar-thumb { background: #888; }</code></td></tr>
+                    <tr><td><span class="numero">17</span></td><td class="o-que-muda">Bolinha do slider (range)</td><td><code class="propriedade">::-webkit-slider-thumb</code></td><td><code class="exemplo-css">input[type="range"]::-webkit-slider-thumb { background: red; }</code></td></tr>
+                    <tr><td><span class="numero">18</span></td><td class="o-que-muda">Trilha do slider</td><td><code class="propriedade">::-webkit-slider-runnable-track</code></td><td><code class="exemplo-css">input[type="range"]::-webkit-slider-runnable-track { background: blue; }</code></td></tr>
+                    <tr><td><span class="numero">19</span></td><td class="o-que-muda">Checkbox/radio nativo</td><td><code class="propriedade">accent-color</code></td><td><code class="exemplo-css">input[type="checkbox"] { accent-color: green; }</code></td></tr>
+                    <tr><td><span class="numero">20</span></td><td class="o-que-muda">Linha &lt;hr&gt;</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">hr { border-color: magenta; }</code></td></tr>
+                    <tr><td><span class="numero">21</span></td><td class="o-que-muda">Cor de fundo do &lt;body&gt;</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">body { background-color: #f0f0f0; }</code></td></tr>
+                    <tr><td><span class="numero">22</span></td><td class="o-que-muda">Cor de fundo de tabela</td><td><code class="propriedade">background-color</code></td><td><code class="exemplo-css">td { background-color: lightblue; }</code></td></tr>
+                    <tr><td><span class="numero">23</span></td><td class="o-que-muda">Cor da borda de tabela</td><td><code class="propriedade">border-color</code></td><td><code class="exemplo-css">table, th, td { border-color: navy; }</code></td></tr>
+                    <tr><td><span class="numero">24</span></td><td class="o-que-muda">Cor do foco no campo (focus)</td><td><code class="propriedade">outline-color</code></td><td><code class="exemplo-css">input:focus { outline-color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">25</span></td><td class="o-que-muda">Cor do campo inválido</td><td><code class="propriedade">border-color + :invalid</code></td><td><code class="exemplo-css">input:invalid { border-color: red; }</code></td></tr>
+                    <tr><td><span class="numero">26</span></td><td class="o-que-muda">Cor do campo válido</td><td><code class="propriedade">border-color + :valid</code></td><td><code class="exemplo-css">input:valid { border-color: green; }</code></td></tr>
+                    <tr><td><span class="numero">27</span></td><td class="o-que-muda">Cor de itens de menu suspenso</td><td><code class="propriedade">background-color / color</code></td><td><code class="exemplo-css">select option { background-color: beige; }</code></td></tr>
+                    <tr><td><span class="numero">28</span></td><td class="o-que-muda">Cor de tooltip (title)</td><td><code class="propriedade note">Não muda facilmente (nativo)</code></td><td><code class="exemplo-css note">precisa de pseudo-elemento customizado</code></td></tr>
+                    <tr><td><span class="numero">29</span></td><td class="o-que-muda">Cor do ícone de detalhes (&lt;details&gt;)</td><td><code class="propriedade">::marker</code></td><td><code class="exemplo-css">summary::marker { color: red; }</code></td></tr>
+                    <tr><td><span class="numero">30</span></td><td class="o-que-muda">Cursor (imagem personalizada)</td><td><code class="propriedade">cursor</code></td><td><code class="exemplo-css">* { cursor: url('meu-cursor.png'), auto; }</code></td></tr>
+                    <tr><td><span class="numero">31</span></td><td class="o-que-muda">Fundo de elemento desabilitado</td><td><code class="propriedade">background-color + :disabled</code></td><td><code class="exemplo-css">input:disabled { background-color: lightgray; }</code></td></tr>
+                    <tr><td><span class="numero">32</span></td><td class="o-que-muda">Cor do texto de elemento desabilitado</td><td><code class="propriedade">color + :disabled</code></td><td><code class="exemplo-css">input:disabled { color: gray; }</code></td></tr>
+                    <tr><td><span class="numero">33</span></td><td class="o-que-muda">Cor da borda de foco de acessibilidade</td><td><code class="propriedade">outline-color</code></td><td><code class="exemplo-css">button:focus-visible { outline-color: blue; }</code></td></tr>
+                    <tr><td><span class="numero">34</span></td><td class="o-que-muda">Cor de fundo de linha alternada (zebra)</td><td><code class="propriedade">:nth-child(even/odd)</code></td><td><code class="exemplo-css">tr:nth-child(even) { background-color: #f2f2f2; }</code></td></tr>
+                    <tr><td><span class="numero">35</span></td><td class="o-que-muda">Cor da sombra de foco</td><td><code class="propriedade">box-shadow</code></td><td><code class="exemplo-css">input:focus { box-shadow: 0 0 0 3px rgba(0,100,255,0.3); }</code></td></tr>
+                </tbody>
+            </table>
                                     </code>
                                 </pre> 
                             </div>
@@ -1643,189 +1743,6 @@ p {
                         </div>
                     `
                 },
-
-                'display': {
-                    'title': 'Proprieadaes de Display',
-                    'content': `
-                    
-                    <h4>display: block</h4>
-
-                    <p>Ocupa toda a largura disponível e quebra linha antes e depois.</p>
-
-                    <div class="code-block">
-                            <div class="code-body">
-                                <pre>
-                                    <code>
-
-&lt;style&gt;
-  .bloco {
-    display: block;
-    width: 200px;
-    height: 100px;
-    padding: 20px;
-    border: 2px solid black;
-    margin: 10px;
-    background: lightblue;
-  }
-&lt;/style&gt;
-
-<h4>display: inline</h4>
-<p>Ocupa apenas o espaço do conteúdo, não quebra linha.</p>
-
-&lt;style&gt;
-  .inline {
-    display: inline;
-    width: 200px;     /* ❌ IGNORADO */
-    height: 100px;    /* ❌ IGNORADO */
-    padding: 20px;    /* ⚠️ Aplica mas não empurra outros elementos */
-    margin: 10px;     /* ⚠️ Apenas horizontal funciona */
-    border: 1px solid red;
-    background: lightgreen;
-  }
-&lt;/style&gt;
-
-&lt;span class="inline">Inline 1&lt;/span&gt;
-&lt;span class="inline">Inline 2&lt;/span&gt;
-&lt;span class="inline">Inline 3&lt;/span&gt;
-&lt;!-- Resultado: todos na mesma linha --&gt;
-
-<h4>display: inline-block</h4>
-<p>Fica inline mas comporta-se como block</p>
-
-&lt;style&gt;
-  .inline-bloco {
-    display: inline-block;
-    width: 150px;      /* ✅ FUNCIONA */
-    height: 80px;      /* ✅ FUNCIONA */
-    padding: 10px;
-    margin: 10px;      /* ✅ FUNCIONA nos 4 lados */
-    border: 2px solid blue;
-    background: lightyellow;
-  }
-&lt;/style&gt;
-
-<h4>display: flex (Tornar a cixaa Flexivel)</h4>
-<p>O Flexbox é um modelo de layout unidimensional que permite distribuir espaços e alinhar itens de forma eficiente dentro de um container, mesmo quando os tamanhos são dinâmicos ou desconhecidos.</p>
-
-&lt;style&gt;
-  .container {
-    display: flex;  /* Ativa o Flexbox */
-    background: lightblue;
-    padding: 20px;
-  }
-  
-  .item {
-    background: coral;
-    padding: 20px;
-    margin: 10px;
-    color: white;
-  }
-&lt;/style&gt;
-
-&lt;div class="container"&gt;
-  <div class="item">Item 1&lt;/div&gt;
-  <div class="item">Item 2&lt;/div&gt;
-  <div class="item">Item 3&lt;/div&gt;
-&lt;/div&gt;
-
-<h4>flex-direction - Direção dos itens</h4>
-.container {
-  display: flex;
-  flex-direction: row;        /* Padrão: linha horizontal (→) */
-  flex-direction: row-reverse; /* Linha reversa (←) */
-  flex-direction: column;      /* Coluna vertical (↓) */
-  flex-direction: column-reverse; /* Coluna reversa (↑) */
-}
-
-<h4>justify-content - Alinhamento horizontal (eixo principal)</h4>
-.container {
-  display: flex;
-  justify-content: flex-start;   /* Início (padrão) */
-  justify-content: flex-end;     /* Final */
-  justify-content: center;       /* Centro */
-  justify-content: space-between; /* Espaço entre itens */
-  justify-content: space-around;  /* Espaço ao redor */
-  justify-content: space-evenly;  /* Espaço igual */
-}
-
-<h4>align-items - Alinhamento vertical (eixo cruzado)</h4>
-.container {
-  display: flex;
-  height: 300px;  /* Precisa de altura para ver efeito */
-  align-items: stretch;    /* Estica (padrão) */
-  align-items: flex-start; /* Topo */
-  align-items: flex-end;   /* Base */
-  align-items: center;     /* Centro */
-  align-items: baseline;   /* Alinha pelo texto */
-}
-
-<h4>flex-wrap - Quebra de linha</h4>
-
-.container {
-  display: flex;
-  flex-wrap: nowrap;       /* Não quebra (padrão) */
-  flex-wrap: wrap;         /* Quebra linha */
-  flex-wrap: wrap-reverse; /* Quebra reversa */
-}
-
-<h4>align-content - Alinhamento de múltiplas linhas</h4>
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 400px;
-  align-content: flex-start;    /* Topo */
-  align-content: flex-end;      /* Base */
-  align-content: center;        /* Centro */
-  align-content: space-between; /* Espaço entre linhas */
-  align-content: space-around;  /* Espaço ao redor */
-}
-
-<h4>flex-shrink - Fator de encolhimento</h4>
-.item1 { flex-shrink: 1; } /* Pode encolher (padrão) */
-.item2 { flex-shrink: 0; } /* NÃO encolhe */
-
-<h4>flex-basis - Tamanho base</h4>
-.item1 { flex-basis: 200px; } /* Tamanho inicial */
-.item2 { flex-basis: auto; }   /* Baseado no conteúdo */
-
-<h4>flex - Atalho (grow shrink basis)</h4>
-/* Atalho mais comum */
-.item {
-  flex: 1;           /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
-  flex: 0 1 auto;    /* Padrão */
-  flex: 1 0 200px;   /* Pode crescer, não encolhe, base 200px */
-}
-
-<h4>align-self - Alinhamento individual</h4>
-.item1 { align-self: flex-start; }
-.item2 { align-self: center; }
-.item3 { align-self: flex-end; }
-
-
-
-                                    </code>
-                                </pre>
-                            </div>
-                            <div class="code-actions">
-                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
-                                <button class="code-btn whatsapp-btn" onclick="Chat.shareCode(this,'whatsapp')">💬 WhatsApp</button>
-                                 <button class="code-btn telegram-btn" onclick="Chat.shareCode(this,'telegram')">📨 Telegram</button>
-                            </div>
-                            <h4>Quando usar Flexbox:</h4>
-                            <h5>Menus e navegação</h5>
-                            <ul>
-                                <li>Cards em linha</li>
-                                <li>Centralizar elementos</li>
-                                <li>Layouts unidimensionais</li>
-                                <li>Barras laterais simples</li>
-                                <li>Formulários e inputs</li>
-                            </ul>
-                        </div>
-                        `
-
-                    },
-
-
                 'pseudo-classe': {
                     title: 'Pseudo-classes - CSS',
                     content: `
@@ -1924,19 +1841,377 @@ propriedade: valor;
                     `
                 },
 
-                'dimencionamento': {
-                    'title': 'Dimencionamento - CSS',
-                    'content': `
-                        <h3>Dimencionamento - CSS</h3>
+                'selectores-css-html': {
+                    title: 'Selectores - CSS - HTML',
+                    content: `
 
-                        <p>Dimensionamento em CSS refere-se às propriedades que controlam a largura, altura e limites dos elementos. São fundamentais para construir layouts e controlar a apresentação visual.</p>
+                    Vou falar sobre seletores CSS, respeitando a **Regra A1**.
 
-                        <h4></h4>
+---
+
+Seletores são padrões que dizem ao CSS quais elementos HTML estilizar. São a ponte entre o HTML e os estilos.
+
+## 1. Seletor de tipo (tag)
+
+Seleciona todos os elementos de uma determinada tag.
+
+HTML:
+&lt;p&gt;Parágrafo 1&lt;/p&gt;
+&lt;p&gt;Parágrafo 2&lt;/p&gt;
+
+CSS:
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+---
+
+## 2. Seletor de classe (.classe)
+
+Seleciona todos os elementos com uma classe específica. Reutilizável. Usa-se um ponto antes do nome.
+
+HTML:
+&lt;p class="destaque"&gt;Texto importante&lt;/p&gt;
+&lt;span class="destaque"&gt;Outro texto&lt;/span&gt;
+
+CSS:
+.destaque {
+    font-weight: bold;
+    color: #007bff;
+}
+
+---
+
+## 3. Seletor de ID (#id)
+
+Seleciona um elemento único com um ID específico. Usa-se um cardinal antes do nome. Deve ser único na página.
+
+HTML:
+&lt;div id="cabecalho"&gt;Conteúdo do cabeçalho&lt;/div&gt;
+
+CSS:
+#cabecalho {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+---
+
+## 4. Seletor universal (*)
+
+Seleciona **todos** os elementos da página.
+
+CSS:
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+---
+
+## 5. Seletores combinados
+
+### Descendente (espaço)
+
+Seleciona elementos que estão **dentro** de outro, a qualquer nível de profundidade.
+
+CSS:
+div p {
+    color: gray;
+}
+
+HTML:
+&lt;div&gt;
+    &lt;p&gt;Este fica cinzento.&lt;/p&gt;
+    &lt;section&gt;
+        &lt;p&gt;Este também, porque está dentro da div.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+
+---
+
+### Filho direto (&gt;)
+
+Seleciona elementos que são **filhos diretos** de outro, sem níveis intermédios.
+
+CSS:
+div &gt; p {
+    color: gray;
+}
+
+HTML:
+&lt;div&gt;
+    &lt;p&gt;Este fica cinzento (filho direto).&lt;/p&gt;
+    &lt;section&gt;
+        &lt;p&gt;Este não fica cinzento (está dentro da section).&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+
+---
+
+### Irmão adjacente (+)
+
+Seleciona o elemento que está **imediatamente a seguir**, no mesmo nível.
+
+CSS:
+h1 + p {
+    font-style: italic;
+    margin-top: 0;
+}
+
+HTML:
+&lt;h1&gt;Título&lt;/h1&gt;
+&lt;p&gt;Este parágrafo fica em itálico (vem logo após h1).&lt;/p&gt;
+&lt;p&gt;Este não é afetado.&lt;/p&gt;
+
+---
+
+### Irmão geral (~)
+
+Seleciona **todos** os irmãos que vêm depois, no mesmo nível.
+
+CSS:
+h1 ~ p {
+    color: #666;
+}
+
+HTML:
+&lt;h1&gt;Título&lt;/h1&gt;
+&lt;p&gt;Fica cinzento.&lt;/p&gt;
+&lt;div&gt;Uma div&lt;/div&gt;
+&lt;p&gt;Também fica cinzento.&lt;/p&gt;
+
+---
+
+## 6. Seletores de atributo
+
+### [atributo]
+
+Seleciona elementos que **têm** um determinado atributo.
+
+CSS:
+a[target] {
+    color: red;
+}
+
+HTML:
+&lt;a href="https://exemplo.com" target="_blank"&gt;Link externo&lt;/a&gt;
+&lt;a href="/pagina"&gt;Link interno&lt;/a&gt;
+
+---
+
+### [atributo="valor"]
+
+Seleciona elementos com atributo de valor **exato**.
+
+CSS:
+input[type="email"] {
+    border-color: blue;
+}
+
+HTML:
+&lt;input type="text"&gt;
+&lt;input type="email"&gt;
+
+---
+
+### [atributo^="valor"]
+
+Seleciona elementos cujo atributo **começa** com o valor.
+
+CSS:
+a[href^="https"] {
+    color: green;
+}
+
+a[href^="http"] {
+    color: orange;
+}
+
+---
+
+### [atributo$="valor"]
+
+Seleciona elementos cujo atributo **termina** com o valor.
+
+CSS:
+a[href$=".pdf"]::after {
+    content: " [PDF]";
+    font-size: 0.8em;
+    color: red;
+}
+
+---
+
+### [atributo*="valor"]
+
+Seleciona elementos cujo atributo **contém** o valor.
+
+CSS:
+img[src*="thumb"] {
+    border: 2px solid #ccc;
+}
+
+---
+
+### [atributo~="valor"]
+
+Seleciona elementos cujo atributo **contém uma palavra inteira** (separada por espaços).
+
+CSS:
+div[class~="card"] {
+    border: 1px solid #ddd;
+}
+
+HTML:
+&lt;div class="card destaque"&gt;Selecionado&lt;/div&gt;
+&lt;div class="cardapio"&gt;Não selecionado&lt;/div&gt;
+
+---
+
+### [atributo|="valor"]
+
+Seleciona elementos cujo atributo é exatamente "valor" ou começa com "valor-".
+
+CSS:
+p[lang|="pt"] {
+    quotes: "«" "»";
+}
+
+HTML:
+&lt;p lang="pt"&gt;Texto em português.&lt;/p&gt;
+&lt;p lang="pt-br"&gt;Texto em português do Brasil.&lt;/p&gt;
+
+---
+
+## Agrupamento de seletores
+
+Vários seletores podem partilhar o mesmo bloco de estilos, separados por vírgula.
+
+CSS:
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.destaque, #banner, p::first-line {
+    font-weight: bold;
+}
+
+---
+
+## Tabela resumo
+
+<table>
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Sintaxe</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tipo (tag)</td>
+            <td>p { }</td>
+            <td>Todos os &lt;p&gt;</td>
+        </tr>
+        <tr>
+            <td>Classe</td>
+            <td>.destaque { }</td>
+            <td>Todos com class="destaque"</td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>#cabecalho { }</td>
+            <td>Elemento com id="cabecalho"</td>
+        </tr>
+        <tr>
+            <td>Universal</td>
+            <td>* { }</td>
+            <td>Todos os elementos</td>
+        </tr>
+        <tr>
+            <td>Descendente</td>
+            <td>div p { }</td>
+            <td>&lt;p&gt; dentro de &lt;div&gt;, qualquer nível</td>
+        </tr>
+        <tr>
+            <td>Filho direto</td>
+            <td>div &gt; p { }</td>
+            <td>&lt;p&gt; filho direto de &lt;div&gt;</td>
+        </tr>
+        <tr>
+            <td>Irmão adjacente</td>
+            <td>h1 + p { }</td>
+            <td>&lt;p&gt; imediatamente após &lt;h1&gt;</td>
+        </tr>
+        <tr>
+            <td>Irmão geral</td>
+            <td>h1 ~ p { }</td>
+            <td>Todos os &lt;p&gt; após &lt;h1&gt;</td>
+        </tr>
+        <tr>
+            <td>Atributo</td>
+            <td>[target] { }</td>
+            <td>Elementos com atributo target</td>
+        </tr>
+        <tr>
+            <td>Atributo exato</td>
+            <td>[type="email"] { }</td>
+            <td>Atributo com valor exato</td>
+        </tr>
+        <tr>
+            <td>Atributo começa</td>
+            <td>[href^="https"] { }</td>
+            <td>Atributo começa com valor</td>
+        </tr>
+        <tr>
+            <td>Atributo termina</td>
+            <td>[href$=".pdf"] { }</td>
+            <td>Atributo termina com valor</td>
+        </tr>
+        <tr>
+            <td>Atributo contém</td>
+            <td>[src*="thumb"] { }</td>
+            <td>Atributo contém valor</td>
+        </tr>
+    </tbody>
+</table>
+
+---
+
+Aguardo novas regras ou questões.
+                        
+
+                       
 
                         <div class="code-block">
                                 <div class="code-body">
                                     <pre>
                                         <code>
+
+                                    </pre>
+                                </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                </div>
+                            </div>
+                    `
+                },
+
+                'dimencionamento-css': {
+                    title: 'Dimencionamento - CSS',
+                    content: `
+
+                    Vou falar sobre dimensionamento em CSS, respeitando a **Regra A1**.
+
+---
+
+Dimensionamento em CSS refere-se às propriedades que controlam a largura, altura e limites dos elementos. São fundamentais para construir layouts e controlar a apresentação visual.
+
 ## width
 
 Define a **largura** do elemento.
@@ -2187,20 +2462,8 @@ div {
 
 ---
 
-                                        </code>
-                                    </pre>
-                                </div>
-                            <div class="code-actions">
-                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
-                                </div>
-                            </div>
+## Tabela resumo de propriedades
 
-                            <h4>Tabela resumo de propriedades</h4>
-
-                        <div class="code-block">
-                                <div class="code-body">
-                                    <pre>
-                                        <code>
 <table>
     <thead>
         <tr>
@@ -2252,20 +2515,11 @@ div {
         </tr>
     </tbody>
 </table>
-                                        </code>
-                                    </pre>
-                                </div>
-                            <div class="code-actions">
-                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
-                                </div>
-                            </div>
 
-                            <h4>Tabela de unidades</h4>
+---
 
-                        <div class="code-block">
-                                <div class="code-body">
-                                    <pre>
-                                        <code>
+## Tabela de unidades
+
 <table>
     <thead>
         <tr>
@@ -2322,7 +2576,19 @@ div {
         </tr>
     </tbody>
 </table>
-                                        </code>
+
+---
+
+Aguardo novas regras ou questões.
+                        
+
+                       
+
+                        <div class="code-block">
+                                <div class="code-body">
+                                    <pre>
+                                        <code>
+
                                     </pre>
                                 </div>
                             <div class="code-actions">
@@ -2330,42 +2596,37 @@ div {
                                 </div>
                             </div>
                     `
+                },
 
-            },
+                'sombras-css': {
+                    title: 'Sombras - CSS',
+                    content: `
 
-            'sombras': {
-                'title': 'Sombras - CSS',
-                'content': `
-                    <h3>Sombras - CSS/h3>
-                  
-                        <h4>shadow</h4>
+                    Vou falar sobre sombras em CSS, respeitando a **Regra A1**.
 
-                        <p>Sombras em CSS aplicam-se a dois contextos principais: **caixas** (elementos) e **texto**. Criam profundidade, destaque e melhoram a hierarquia visual.</p>
+---
 
-                        <h4>box-shadow</h4>
+Sombras em CSS aplicam-se a dois contextos principais: **caixas** (elementos) e **texto**. Criam profundidade, destaque e melhoram a hierarquia visual.
 
-                        <p>Aplica sombra a um elemento (div, section, button, etc.).</p>
+## box-shadow
 
-                        <h4>**Sintaxe:**</h4>
+Aplica sombra a um elemento (div, section, button, etc.).
 
-                        <p>box-shadow: offset-x offset-y blur-radius spread-radius color;</p>
+**Sintaxe:**
 
+box-shadow: offset-x offset-y blur-radius spread-radius color;
 
-                        <h5>**Parâmetros:**</h5>
+**Parâmetros:**
 
-                        <pre>
-                        - offset-x — deslocamento horizontal (obrigatório)
-                        - offset-y — deslocamento vertical (obrigatório) 
-                        - blur-radius — desfoque (opcional, padrão 0)
-                        - spread-radius — expansão/contração (opcional, padrão 0)
-                        - color — cor da sombra (opcional, padrão black)
-                        - inset — sombra interna (opcional)
-                        </pre>
+- offset-x — deslocamento horizontal (obrigatório)
+- offset-y — deslocamento vertical (obrigatório)
+- blur-radius — desfoque (opcional, padrão 0)
+- spread-radius — expansão/contração (opcional, padrão 0)
+- color — cor da sombra (opcional, padrão black)
+- inset — sombra interna (opcional)
 
-                        <div class="code-block">
-                                <div class="code-body">
-                                    <pre>
-                                        <code>
+---
+
 ### Sombra básica
 
 div {
@@ -2530,22 +2791,10 @@ h1 {
         4px 4px 0 #999;
 }
 
-                                        </code>
-                                    </pre>
-                                </div>
-                            <div class="code-actions">
-                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
-                                </div>
-                            </div>
+---
 
-                  
-                        <h4>Tabela box-shadow</h4>
-                   
+## Tabela box-shadow
 
-                        <div class="code-block">
-                                <div class="code-body">
-                                    <pre>
-                                        <code>
 <table>
     <thead>
         <tr>
@@ -2624,16 +2873,431 @@ h1 {
     </tbody>
 </table>
 
-                                        </code>
+---
+
+## Exemplo prático completo
+
+&lt;div class="card"&gt;
+    &lt;h1 class="titulo"&gt;Título do Cartão&lt;/h1&gt;
+    &lt;p&gt;Conteúdo do cartão com sombra e texto estilizado.&lt;/p&gt;
+&lt;/div&gt;
+
+.card {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.titulo {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+---
+
+Aguardo novas regras ou questões.
+                        
+
+                       
+
+                        <div class="code-block">
+                                <div class="code-body">
+                                    <pre>
+                                        <code>
+
                                     </pre>
                                 </div>
                             <div class="code-actions">
                                 <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
                                 </div>
                             </div>
-                
-                `
-            },
+                    `
+                },
+
+
+                'bordas-css': {
+                    title: 'Bordas - CSS',
+                    content: `
+
+                    Vou falar sobre bordas em CSS, respeitando a **Regra A1**.
+
+---
+
+Bordas delimitam visualmente um elemento. Podem ter diferentes estilos, espessuras, cores e arredondamentos.
+
+## Propriedade border (atalho)
+
+Define estilo, espessura e cor numa só linha.
+
+**Sintaxe:**
+
+border: espessura estilo cor;
+
+div {
+    border: 2px solid #333;
+}
+
+---
+
+## border-width
+
+Define a espessura da borda.
+
+div {
+    border-style: solid;
+    border-width: 3px;
+}
+
+**Valores individuais por lado:**
+
+div {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 2px;
+    border-bottom-width: 3px;
+    border-left-width: 4px;
+}
+
+---
+
+## border-style
+
+Define o estilo visual da borda.
+
+**none** — sem borda (padrão).
+
+div {
+    border: 2px none;
+}
+
+**solid** — linha sólida (mais comum).
+
+div {
+    border: 2px solid #000;
+}
+
+**dashed** — linha tracejada.
+
+div {
+    border: 2px dashed #666;
+}
+
+**dotted** — linha pontilhada.
+
+div {
+    border: 2px dotted #999;
+}
+
+**double** — linha dupla.
+
+div {
+    border: 4px double #333;
+}
+
+**groove** — efeito 3D entalhado.
+
+div {
+    border: 4px groove #555;
+}
+
+**ridge** — efeito 3D em relevo.
+
+div {
+    border: 4px ridge #555;
+}
+
+**inset** — efeito 3D afundado.
+
+div {
+    border: 4px inset #555;
+}
+
+**outset** — efeito 3D elevado.
+
+div {
+    border: 4px outset #555;
+}
+
+---
+
+## border-color
+
+Define a cor da borda.
+
+div {
+    border-style: solid;
+    border-color: red;
+}
+
+**Valores individuais por lado:**
+
+div {
+    border-style: solid;
+    border-top-color: red;
+    border-right-color: green;
+    border-bottom-color: blue;
+    border-left-color: yellow;
+}
+
+---
+
+## Bordas por lado
+
+**Atalho individual:**
+
+div {
+    border-top: 2px solid red;
+    border-right: 3px dashed green;
+    border-bottom: 4px double blue;
+    border-left: 1px dotted orange;
+}
+
+---
+
+## border-radius
+
+Arredonda os cantos da borda.
+
+**Valor único (todos os cantos iguais):**
+
+div {
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+**Dois valores (canto superior esquerdo + inferior direito, superior direito + inferior esquerdo):**
+
+div {
+    border-radius: 10px 20px;
+}
+
+**Quatro valores (cada canto individual, sentido horário a começar no superior esquerdo):**
+
+div {
+    border-radius: 10px 20px 30px 40px;
+}
+
+**Círculo (elemento quadrado com 50%):**
+
+div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    border-radius: 50%;
+}
+
+**Cápsula/pílula (elemento retangular com valor alto):**
+
+button {
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+**Cantos individuais:**
+
+div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 40px;
+}
+
+---
+
+## border-image
+
+Usa uma imagem como borda em vez de linha sólida.
+
+div {
+    border: 10px solid transparent;
+    border-image: url(borda.png) 30 round;
+}
+
+**Parâmetros:**
+
+- url() — caminho da imagem
+- slice — como fatiar a imagem (valor numérico sem px)
+- repeat/round/stretch — como repetir a imagem nos lados
+
+---
+
+## outline
+
+Linha desenhada **fora** da borda, sem ocupar espaço no layout. Muito usada para foco.
+
+button:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+**Diferença entre outline e border:**
+- outline não afeta o box model (não empurra elementos vizinhos)
+- outline não suporta border-radius
+- outline pode ter offset (distância extra do elemento)
+
+---
+
+## Tabela de estilos
+
+<table>
+    <thead>
+        <tr>
+            <th>Estilo</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>none</td>
+            <td>Sem borda</td>
+        </tr>
+        <tr>
+            <td>solid</td>
+            <td>Linha sólida</td>
+        </tr>
+        <tr>
+            <td>dashed</td>
+            <td>Tracejada</td>
+        </tr>
+        <tr>
+            <td>dotted</td>
+            <td>Pontilhada</td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>Linha dupla</td>
+        </tr>
+        <tr>
+            <td>groove</td>
+            <td>Efeito entalhado 3D</td>
+        </tr>
+        <tr>
+            <td>ridge</td>
+            <td>Efeito relevo 3D</td>
+        </tr>
+        <tr>
+            <td>inset</td>
+            <td>Efeito afundado 3D</td>
+        </tr>
+        <tr>
+            <td>outset</td>
+            <td>Efeito elevado 3D</td>
+        </tr>
+    </tbody>
+</table>
+
+---
+
+## Tabela de propriedades
+
+<table>
+    <thead>
+        <tr>
+            <th>Propriedade</th>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>border</td>
+            <td>Atalho geral</td>
+            <td>border: 2px solid red;</td>
+        </tr>
+        <tr>
+            <td>border-width</td>
+            <td>Espessura</td>
+            <td>border-width: 3px;</td>
+        </tr>
+        <tr>
+            <td>border-style</td>
+            <td>Estilo da linha</td>
+            <td>border-style: dashed;</td>
+        </tr>
+        <tr>
+            <td>border-color</td>
+            <td>Cor da borda</td>
+            <td>border-color: #333;</td>
+        </tr>
+        <tr>
+            <td>border-radius</td>
+            <td>Arredondamento dos cantos</td>
+            <td>border-radius: 10px;</td>
+        </tr>
+        <tr>
+            <td>border-image</td>
+            <td>Imagem como borda</td>
+            <td>border-image: url(b.png) 30;</td>
+        </tr>
+        <tr>
+            <td>outline</td>
+            <td>Linha externa sem ocupar espaço</td>
+            <td>outline: 2px solid blue;</td>
+        </tr>
+        <tr>
+            <td>outline-offset</td>
+            <td>Distância do outline ao elemento</td>
+            <td>outline-offset: 2px;</td>
+        </tr>
+    </tbody>
+</table>
+
+---
+
+## Exemplo prático completo
+
+&lt;div class="cartao"&gt;
+    &lt;h2&gt;Título&lt;/h2&gt;
+    &lt;p&gt;Este cartão tem borda arredondada e sombra.&lt;/p&gt;
+&lt;/div&gt;
+
+.cartao {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cartao:hover {
+    border-color: #007bff;
+    outline: 2px solid rgba(0, 123, 255, 0.3);
+    outline-offset: 2px;
+}
+
+---
+
+Aguardo novas regras ou questões.
+                        
+
+                       
+
+                        <div class="code-block">
+                                <div class="code-body">
+                                    <pre>
+                                        <code>
+
+                                    </pre>
+                                </div>
+                            <div class="code-actions">
+                                <button class="code-btn copy-btn" onclick="Chat.copyCode(this)">📋 Copiar</button>
+                                </div>
+                            </div>
+                    `
+                },
+
+
+            }
         },
         javascript: {
             title: '🤔 JavaScript - Linguagem da Web',
@@ -2677,7 +3341,9 @@ const soma = numeros.reduce((a, b) => a + b, 0);</code></pre></div>
                             </div>
                         </div>
                     `
-                }
+                },
+
+                
             }
         },
         outros: {
