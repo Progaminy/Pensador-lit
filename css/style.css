@@ -425,12 +425,12 @@ body {
 .code-block {
     background: #1e1e1e;
     border-radius: 12px;
-    margin: 15px 0;
+    margin: 1px 0;
     overflow: hidden;
 }
 
 .code-body {
-    padding: 16px;
+    padding: 1px;
     overflow-x: auto;
 }
 
@@ -661,25 +661,11 @@ body {
     background: linear-gradient(135deg, #39ff14, #2ecc71);
 }
 
-h4 {
-    color: white;
-    background-color: #095f8a;
-}
-
 .code-actions {
     display: flex;
     gap: 10px;
 }
 
-
-h1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    margin: 0;
-    padding: 25px;
-    text-align: center;
-    font-size: 1.8em;
-}
 
 table {
     width: 100%;
@@ -759,4 +745,8 @@ tr:hover {
         font-size: 1.4em;
         padding: 15px;
     }
+}
+
+.comentario {
+    color: var(--neon-red);
 }
